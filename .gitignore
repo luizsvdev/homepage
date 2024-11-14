@@ -10,6 +10,11 @@
 !.yarn/releases
 !.yarn/versions
 
+# idea
+.idea/*
+!.idea/runConfigurations
+!.idea/icon.svg
+
 # testing
 /coverage
 
