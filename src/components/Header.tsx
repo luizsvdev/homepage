@@ -4,7 +4,7 @@ import { JSX } from 'react';
 
 export default function Header(): JSX.Element {
 	return (
-		<header className="w-full flex justify-center items-center border-b-1">
+		<header className="w-full flex justify-center items-center border-b-1 fixed top-0">
 			<div style={{ maxWidth: '1400px' }} className="p-4 w-full flex justify-between">
 				<div className="flex gap-4 items-center">
 					<Image src="/logos/logo.svg" alt="Logo" width={40} height={40} />

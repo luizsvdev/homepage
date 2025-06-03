@@ -1,0 +1,24 @@
+{
+	"appHeader": {
+		"about": "Sobre",
+		"skills": "Habilidades",
+		"projects": "Projetos",
+		"contact": "Contato"
+	},
+	"appMain": {
+		"hero": {
+			"title": {
+				"line1": "Desenvolvedor",
+				"line2": "Full Stack"
+			},
+			"description": {
+				"line1": "Depurando código, um pato de borracha por vez 🦆",
+				"line2": "Apaixonado por criar soluções elegantes para problemas complexos"
+			},
+			"actions": {
+				"getInTouch": "Fale Comigo",
+				"viewWork": "Ver no GitHub"
+			}
+		}
+	}
+}

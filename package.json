@@ -12,6 +12,7 @@
     "@heroui/react": "^2.7.9",
     "framer-motion": "^12.15.0",
     "next": "^15.3.3",
+    "next-intl": "^4.1.0",
     "react": "^19",
     "react-dom": "^19"
   },

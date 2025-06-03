@@ -1,0 +1,24 @@
+{
+	"appHeader": {
+		"about": "About",
+		"skills": "Skills",
+		"projects": "Projects",
+		"contact": "Contacts"
+	},
+	"appMain": {
+		"hero": {
+			"title": {
+				"line1": "Full Stack",
+				"line2": "Developer"
+			},
+			"description": {
+				"line1": "Debugging code one rubber duck at a time 🦆",
+				"line2": "Passionate about creating elegant solutions to complex problems"
+			},
+			"actions": {
+				"getInTouch": "Get In Touch",
+				"viewWork": "View Work"
+			}
+		}
+	}
+}

@@ -12,10 +12,10 @@ export default function LsContainer({
 	textAlign = 'left'
 }: Props): React.JSX.Element {
 	return (
-		<div className={`w-full flex justify-center text-${textAlign}`}>
+		<section className={`w-full flex justify-center items-center text-${textAlign} h-dvh`}>
 			<div style={{maxWidth: '1400px'}} className="px-4 w-full">
 				{children}
 			</div>
-		</div>
+		</section>
 	);
 }
