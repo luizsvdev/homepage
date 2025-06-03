@@ -16,7 +16,7 @@ const geist = Geist({
 
 export const metadata: Metadata = {
 	title: 'Portfolio | Luiz Silva',
-	description: 'Created with love by Luiz Silva'
+	description: 'Created by Luiz Silva'
 };
 
 type RootLayout = {
@@ -33,7 +33,7 @@ export default async function RootLayout({
 	}
 
 	return (
-		<html lang="pt">
+		<html lang={locale}>
 			<body className={`${geist.className} h-dvh dark text-foreground bg-background`}>
 				<NextIntlClientProvider>
 					<UiProvider>
