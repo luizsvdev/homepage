@@ -20,7 +20,7 @@ export default function HeroActions(): React.JSX.Element {
 			</Button>
 			<Button
 				color="secondary"
-				variant="light"
+				variant="ghost"
 				startContent={<SiGithub size={20} />}
 				as={Link}
 				href={githubProfile}
