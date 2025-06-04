@@ -9,7 +9,7 @@ export default function HeroProfilePicture(): React.JSX.Element {
 				width={200}
 				src="/images/Luiz.png"
 				alt="Luiz"
-				className="select-none rounded-full mx-auto border-4 border-purple-500 shadow-2xl shadow-purple-500/20"
+				className="select-none rounded-full mx-auto border-4 border-primary shadow-2xl shadow-purple-500/20"
 			/>
 		</div>
 	);

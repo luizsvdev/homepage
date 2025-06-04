@@ -1,5 +1,3 @@
-import Header from '@/components/Header';
-import Hero from '@/components/main/hero/Hero';
 import { routing } from '@/i18n/routing';
 import { UiProvider } from '@/providers/UiProvider';
 import type { Metadata } from 'next';
@@ -37,8 +35,6 @@ export default async function RootLayout({
 			<body className={`${geist.className} h-dvh dark text-foreground bg-background`}>
 				<NextIntlClientProvider>
 					<UiProvider>
-						<Header />
-						<Hero />
 						{children}
 					</UiProvider>
 				</NextIntlClientProvider>

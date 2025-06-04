@@ -1,16 +1,32 @@
 'use client';
 
-import { Button } from '@heroui/react';
+import { githubProfile } from '@/constants/social';
+import { Button, Link } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+import { LuMail } from 'react-icons/lu';
+import { SiGithub } from 'react-icons/si';
 
 export default function HeroActions(): React.JSX.Element {
-
 	const t = useTranslations('appMain.hero.actions');
+
 	return (
 		<div className="flex gap-4 justify-center items-center">
-			<Button color="primary">{t('getInTouch')}</Button>
-			<Button color="secondary">{t('viewWork')}</Button>
+			<Button
+				color="primary"
+				startContent={<LuMail size={20} />}
+			>
+				{t('getInTouch')}
+			</Button>
+			<Button
+				color="secondary"
+				startContent={<SiGithub size={20} />}
+				as={Link}
+				href={githubProfile}
+				target="_blank"
+			>
+				{t('viewWork')}
+			</Button>
 		</div>
 	);
 }

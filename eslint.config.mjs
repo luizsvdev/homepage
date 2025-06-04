@@ -31,7 +31,7 @@ const eslintConfig = [
       'no-console': 'warn',
       'quotes': ['warn', 'single'],
       'max-len': ['warn', 120],
-      'array-element-newline': ['warn', { multiline: true, minItems: 3 }],
+      'array-element-newline': ['warn', { multiline: true, minItems: 4 }],
       'function-paren-newline': ['warn', 'multiline-arguments'],
       'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
       'semi': ['warn', 'always'], // Regra core, não "@/semi"

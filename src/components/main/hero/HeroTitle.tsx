@@ -6,9 +6,9 @@ export default function HeroTitle(): React.JSX.Element {
 
 	return (
 		<h1 className="text-5xl md:text-7xl font-bold select-none mb-8">
-			<span className="text-purple-400">{t('line1')}</span>
+			<span className="text-primary">{t('line1')}</span>
 			<br />
-			<span className="text-yellow-400">{t('line2')}</span>
+			<span className="text-secondary">{t('line2')}</span>
 		</h1>
 	);
 }
