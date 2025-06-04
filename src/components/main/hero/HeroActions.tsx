@@ -11,7 +11,7 @@ export default function HeroActions(): React.JSX.Element {
 	const t = useTranslations('appMain.hero.actions');
 
 	return (
-		<div className="flex gap-4 justify-center items-center">
+		<div className="flex mb-8 gap-4 justify-center items-center">
 			<Button
 				color="primary"
 				startContent={<LuMail size={20} />}

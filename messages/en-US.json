@@ -19,6 +19,9 @@
 				"getInTouch": "Get In Touch",
 				"viewWork": "View Work"
 			}
+		},
+		"about": {
+			"title": "About Me"
 		}
 	}
 }

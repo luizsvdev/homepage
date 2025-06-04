@@ -19,6 +19,9 @@
 				"getInTouch": "Fale Comigo",
 				"viewWork": "Ver GitHub"
 			}
+		},
+		"about": {
+			"title": "Sobre Mim"
 		}
 	}
 }
