@@ -15,6 +15,8 @@ export default function HeroActions(): React.JSX.Element {
 			<Button
 				color="primary"
 				startContent={<LuMail size={20} />}
+				as={Link}
+				href="mailto:luizsv.dev@gmail.com"
 			>
 				{t('getInTouch')}
 			</Button>
