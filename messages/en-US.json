@@ -21,7 +21,20 @@
 			}
 		},
 		"about": {
-			"title": "About Me"
+			"title": "About Me",
+			"presentation": {
+	      "section1": "Hello! I'm Luiz, a passionate full-stack developer who believes in the power of rubber duck debugging. Just like explaining your code to a rubber duck helps you find solutions, I approach every project with clarity, patience, and attention to detail.",
+				"section2": "With expertise in modern web technologies, I create scalable applications that solve real-world problems. My development philosophy centers around clean code, user experience, and continuous learning."
+			},
+			"quickFacts": {
+			  "title": "Quick Facts",
+				"age": "Years Old",
+				"graduation": "Software Engineering Student",
+				"experience": "Years of Experience",
+				"basedIn": "Based in Brazil",
+				"enthusiast": "Rubber Duck Debugging Enthusiast",
+				"teaTeam": "Tea Team"
+			}
 		}
 	}
 }

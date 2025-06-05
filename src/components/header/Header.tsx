@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
 				<For each={sectionIds}>
 					{(section) => (
 						<NavbarItem key={section} isActive={activeSection === section}>
-							<Link color="foreground" href={`#${section}`}>
+							<Link color={activeSection === section ? 'primary' : 'foreground'} href={`#${section}`}>
 								{t(section)}
 							</Link>
 						</NavbarItem>

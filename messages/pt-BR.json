@@ -21,7 +21,20 @@
 			}
 		},
 		"about": {
-			"title": "Sobre Mim"
+			"title": "Sobre Mim",
+			"presentation": {
+			  "section1": "Olá! Eu sou o Luiz, desenvolvedor full-stack apaixonado por tecnologia e adepto da técnica do rubber duck debugging. Assim como explicar seu código para um patinho de borracha ajuda a encontrar soluções, encaro cada projeto com clareza, paciência e atenção aos detalhes.",
+        "section2": "Com domínio das tecnologias web modernas, desenvolvo aplicações escaláveis que resolvem problemas do mundo real. Minha filosofia de desenvolvimento é baseada em código limpo, foco na experiência do usuário e aprendizado contínuo."
+			},
+			"quickFacts": {
+			  "title": "Fatos Rápidos",
+				"age": "Anos",
+			  "graduation": "Formando em Engenharia de Software",
+			  "experience": "Anos de Experiência",
+			  "basedIn": "Residente no Brasil",
+			  "enthusiast": "Entusiasta do Rubber Duck Debugging",
+			  "teaTeam": "Time do Chá"
+			}
 		}
 	}
 }

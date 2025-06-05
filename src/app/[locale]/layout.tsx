@@ -32,7 +32,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang={locale}>
-			<body className={`${geist.className} h-dvh dark text-foreground bg-background`}>
+			<body className={`${geist.className} dark text-foreground bg-background`}>
 				<NextIntlClientProvider>
 					<UiProvider>
 						{children}

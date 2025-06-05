@@ -6,3 +6,7 @@
   --background: #000;
   --foreground: #EDEDED;
 }
+
+html {
+  scroll-behavior: smooth;
+}
