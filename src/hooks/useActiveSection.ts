@@ -7,7 +7,7 @@ type UseActiveSection = {
 
 const sectionIds: readonly SectionId[] = SECTION_IDS;
 
-export function useActiveSection(): UseActiveSection {
+export default function useActiveSection(): UseActiveSection {
 	const [activeSection, setActiveSection] = useState<SectionId>('home');
 
 	useEffect(() => {

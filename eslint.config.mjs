@@ -2,6 +2,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import stylistic from '@stylistic/eslint-plugin';
 import ts from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import importNewLine from 'eslint-plugin-import-newlines';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -26,15 +27,17 @@ const eslintConfig = [
     plugins: {
       stylistic,
       '@typescript-eslint': ts,
+      "import-newlines": importNewLine
     },
     rules: {
       'no-console': 'warn',
       'quotes': ['warn', 'single'],
       'max-len': ['warn', 120],
-      'array-element-newline': ['warn', { multiline: true, minItems: 4 }],
+      // 'array-element-newline': ['warn', { multiline: true, minItems: 4 }],
       'function-paren-newline': ['warn', 'multiline-arguments'],
       'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
-      'semi': ['warn', 'always'], // Regra core, não "@/semi"
+      'semi': ['warn', 'always'],
+      'import-newlines/enforce': ['warn', { items: 8, 'max-len': 80 }],
 
       // Stylistic
       'stylistic/comma-dangle': ['warn', 'never'],
