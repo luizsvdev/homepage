@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { FaAws } from 'react-icons/fa';
+import { LuCloud, LuCode, LuServer, LuSmartphone } from 'react-icons/lu';
 import { RiJavaLine } from 'react-icons/ri';
 import {
 	SiAndroid,
@@ -21,16 +22,22 @@ import {
 	SiVuedotjs
 } from 'react-icons/si';
 
-export type CategoryType =
-	| 'frontend'
-	| 'backend'
-	| 'devops'
-	| 'mobile';
+export const allCategoryTypes = ['frontend', 'backend', 'devops', 'mobile'] as const;
+export type CategoryType = typeof allCategoryTypes[number];
+
 
 export type Category = {
 	label: string;
 	value: CategoryType;
+	icon: React.ReactNode;
 };
+
+export const allCategories: Category[] = [
+	{ label: 'Frontend', value: 'frontend', icon: <LuCode size={36} className="text-secondary" /> },
+	{ label: 'Backend', value: 'backend', icon: <LuServer size={36} className="text-secondary"  /> },
+	{ label: 'DevOps', value: 'devops', icon: <LuCloud size={36} className="text-secondary" /> },
+	{ label: 'Mobile', value: 'mobile', icon: <LuSmartphone size={36} className="text-secondary"  /> }
+];
 
 export type Skill = {
 	label: string;
@@ -38,11 +45,9 @@ export type Skill = {
 	icon: React.ReactNode;
 };
 
-// export type SkillWithCategory = Skill & { category: Category }
-
-const groupedSkills: Record<CategoryType, Skill[]> = {
+export const groupedSkills: Record<CategoryType, Skill[]> = {
 	frontend: [
-		{ label: 'Angular', value: 'angualr', icon: <SiAngular size={20} /> },
+		{ label: 'Angular', value: 'angular', icon: <SiAngular size={20} /> },
 		{ label: 'Next.js', value: 'nextjs', icon: <SiNextdotjs size={20} /> },
 		{ label: 'React', value: 'react', icon: <SiReact size={20} /> },
 		{ label: 'Nuxt.js', value: 'nuxtjs', icon: <SiNuxtdotjs size={20} /> },
@@ -75,33 +80,3 @@ const groupedSkills: Record<CategoryType, Skill[]> = {
 		{ label: 'React Native', value: 'reactnative', icon: <SiReact size={20} /> }
 	]
 };
-
-type UseSkills = {
-	filteredSkills: Skill[];
-};
-
-export default function useSkills(): UseSkills {
-	const [selectedCategories, setSelectedCategories] = useState<CategoryType[]>([]);
-	const [filteredSkills, setFilteredSkills] = useState<Skill[]>([]);
-
-	useEffect(() => {
-		const allEntries = Object.entries(groupedSkills) as [CategoryType, Skill[]][];
-
-		if (selectedCategories.length === 0) {
-			// Nenhuma categoria selecionada → retorna tudo
-			const allSkills = allEntries.flatMap(([_, skills]) => skills);
-			setFilteredSkills(allSkills);
-			return;
-		}
-
-		// Filtra por categoria selecionada
-		const filtered = allEntries
-			.filter(([category]) => selectedCategories.includes(category))
-			.flatMap(([_, skills]) => skills);
-
-		setFilteredSkills(filtered);
-	}, [selectedCategories]);
-
-
-	return { filteredSkills };
-}
