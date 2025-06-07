@@ -1,14 +1,15 @@
 'use client';
 
-import {
+import { CategoryType, groupedSkills, Skill } from '@/constants/skills';
+import React, {
 	createContext,
+	ReactNode,
+	useCallback,
 	useContext,
 	useEffect,
-	useState,
-	useCallback,
-	ReactNode
+	useMemo,
+	useState
 } from 'react';
-import { CategoryType, groupedSkills, Skill } from '@/constants/skills';
 
 type SkillsContextType = {
 	filteredSkills: Skill[];
@@ -20,7 +21,7 @@ const SkillsContext = createContext<SkillsContextType | undefined>(undefined);
 
 const allEntries = Object.entries(groupedSkills) as [CategoryType, Skill[]][];
 
-export const SkillsProvider = ({ children }: { children: ReactNode }) => {
+export function SkillsProvider({ children }: { children: ReactNode }): React.JSX.Element {
 	const [selectedCategories, setSelectedCategories] = useState<CategoryType[]>([]);
 	const [filteredSkills, setFilteredSkills] = useState<Skill[]>([]);
 
@@ -46,15 +47,21 @@ export const SkillsProvider = ({ children }: { children: ReactNode }) => {
 				: [...prev, category]);
 	}, []);
 
+	const contextValues = useMemo(() => ({
+		filteredSkills,
+		selectedCategories,
+		toggleCategory
+	}), [filteredSkills, selectedCategories, toggleCategory]);
+
 	return (
-		<SkillsContext.Provider value={{ filteredSkills, selectedCategories, toggleCategory }}>
+		<SkillsContext.Provider value={contextValues}>
 			{children}
 		</SkillsContext.Provider>
 	);
 };
 
-export const useSkillsContext = (): SkillsContextType => {
+export function useSkillsContext(): SkillsContextType {
 	const context = useContext(SkillsContext);
-	if (!context) throw new Error('useSkills must be used within a SkillsProvider');
+	if (!context) throw new Error('useSkillsContext must be used within a SkillsProvider');
 	return context;
 };

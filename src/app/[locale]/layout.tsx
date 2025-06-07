@@ -1,7 +1,7 @@
 import { routing } from '@/i18n/routing';
-import { UiProvider } from '@/providers/UiProvider';
+import ContextProvider from '@/providers/ContextProvider';
 import type { Metadata } from 'next';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { hasLocale } from 'next-intl';
 import { Geist } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import React from 'react';
@@ -33,11 +33,9 @@ export default async function RootLayout({
 	return (
 		<html lang={locale}>
 			<body className={`${geist.className} dark text-foreground bg-background`}>
-				<NextIntlClientProvider>
-					<UiProvider>
-						{children}
-					</UiProvider>
-				</NextIntlClientProvider>
+				<ContextProvider>
+					{children}
+				</ContextProvider>
 			</body>
 		</html>
 	);

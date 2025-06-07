@@ -4,11 +4,11 @@ import Image from 'next/image';
 import React from 'react';
 
 export default function AboutTitle(): React.JSX.Element {
-	const t = useTranslations('appMain.about');
+	const intl = useTranslations('appMain.about');
 
 	return (
 		<LsSectionTitle
-			label={t('title')}
+			label={intl('title')}
 			endAdornment={<Image
 				src="/images/rubber_duck_2.png"
 				alt="Rubber Duck"

@@ -7,15 +7,15 @@ import React from 'react';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 export default function AboutPresentation(): React.JSX.Element {
-	const t = useTranslations('appMain.about.presentation');
+	const intl = useTranslations('appMain.about.presentation');
 
 	return (
 		<div className="flex flex-col gap-8 text-left">
 			<p className="text-lg text-gray-300">
-				{t('section1')}
+				{intl('section1')}
 			</p>
 			<p className="text-lg text-gray-300">
-				{t('section2')}
+				{intl('section2')}
 			</p>
 			<div className="flex gap-4">
 				<Button

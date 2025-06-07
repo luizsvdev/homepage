@@ -8,7 +8,7 @@ import { LuMail } from 'react-icons/lu';
 import { SiGithub } from 'react-icons/si';
 
 export default function HeroActions(): React.JSX.Element {
-	const t = useTranslations('appMain.hero.actions');
+	const intl = useTranslations('appMain.hero.actions');
 
 	return (
 		<div className="flex mb-8 gap-4 justify-center items-center">
@@ -18,7 +18,7 @@ export default function HeroActions(): React.JSX.Element {
 				as={Link}
 				href="mailto:luizsv.dev@gmail.com"
 			>
-				{t('getInTouch')}
+				{intl('getInTouch')}
 			</Button>
 			<Button
 				color="secondary"
@@ -28,7 +28,7 @@ export default function HeroActions(): React.JSX.Element {
 				href={githubProfile}
 				target="_blank"
 			>
-				{t('viewWork')}
+				{intl('viewWork')}
 			</Button>
 		</div>
 	);

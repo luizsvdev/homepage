@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionId } from '@/constants/section';
 import React from 'react';
 
