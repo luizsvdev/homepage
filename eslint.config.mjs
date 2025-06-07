@@ -2,7 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import stylistic from '@stylistic/eslint-plugin';
 import ts from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import importNewLine from 'eslint-plugin-import-newlines';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -14,9 +13,9 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-	...compat.extends("next/core-web-vitals", "next/typescript"),
+	...compat.extends('next/core-web-vitals', 'next/typescript'),
 	{
-		files: ['**/*.ts', '**/*.tsx'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
@@ -26,8 +25,7 @@ const eslintConfig = [
 		},
 		plugins: {
 			stylistic,
-			'@typescript-eslint': ts,
-			"import-newlines": importNewLine
+			'@typescript-eslint': ts
 		},
 		rules: {
 			'no-console': 'warn',
@@ -36,7 +34,12 @@ const eslintConfig = [
 			'function-paren-newline': ['warn', 'multiline-arguments'],
 			'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
 			'semi': ['warn', 'always'],
-			'import-newlines/enforce': ['warn', { items: 8, 'max-len': 80 }],
+			'object-curly-newline': ['warn', {
+				'ObjectExpression': 'always',
+        'ObjectPattern': { 'multiline': true },
+				'ImportDeclaration': { 'multiline': true, 'minProperties': 3},
+				'ObjectExpression': 'always'
+			}],
 
 			// Stylistic
 			'stylistic/comma-dangle': ['warn', 'never'],
@@ -46,13 +49,13 @@ const eslintConfig = [
 
 			// TypeScript
 			'@typescript-eslint/no-unused-vars': ['warn', {
-				"args": "all",
-				"argsIgnorePattern": "^_",
-				"caughtErrors": "all",
-				"caughtErrorsIgnorePattern": "^_",
-				"destructuredArrayIgnorePattern": "^_",
-				"varsIgnorePattern": "^_",
-				"ignoreRestSiblings": true
+				'args': 'all',
+				'argsIgnorePattern': '^_',
+				'caughtErrors': 'all',
+				'caughtErrorsIgnorePattern': '^_',
+				'destructuredArrayIgnorePattern': '^_',
+				'varsIgnorePattern': '^_',
+				'ignoreRestSiblings': true
 			}],
 			'@typescript-eslint/prefer-readonly': 'warn',
 			'@typescript-eslint/explicit-function-return-type': 'warn',

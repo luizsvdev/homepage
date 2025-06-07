@@ -5,12 +5,7 @@ import { githubProfile } from '@/constants/social';
 import { useScrollContext } from '@/providers/ScrollProvider';
 import For from '@/utils/For';
 import {
-	Button,
-	Link,
-	Navbar,
-	NavbarBrand,
-	NavbarContent,
-	NavbarItem
+	Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem
 } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import { JSX, useMemo } from 'react';
