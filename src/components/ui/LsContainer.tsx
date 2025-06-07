@@ -25,7 +25,7 @@ export default function LsContainer({
 	const containerHeight = isHero ? 'h-dvh short:dvh-[calc(100dvh-65px)] short:pt-[65px]' : 'py-24';
 	const containerWidth = forBetterReadability ? 'max-w-4xl' : 'max-w-[1400px]';
 	const bgColor = coloredBackground ? 'bg-primary-400/10' : '';
-	const containerOrientation = isHero ? 'short:flex-row justify-center' : '';
+	const containerOrientation = isHero ? 'short:flex-row justify-center gap-4' : '';
 
 	return (
 		<section
