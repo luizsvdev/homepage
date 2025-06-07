@@ -28,11 +28,11 @@ export default function Header(): JSX.Element {
 		<Navbar
 			isBordered
 			classNames={{
-				base: 'w-full flex items-center justify-center fixed',
+				base: 'w-full flex items-center justify-center fixed border-b border-primary/30',
 				wrapper: 'max-w-[1400px]'
 			}}
 		>
-			<NavbarBrand as={Link} href="#home" className="flex gap-4 items-center">
+			<NavbarBrand as={Link} href="#home" className="flex gap-4 items-center select-none">
 				<LsPortfolioLogo />
 				<span className={`
 					text-xl font-bold
@@ -42,7 +42,7 @@ export default function Header(): JSX.Element {
 					Luiz Silva
 				</span>
 			</NavbarBrand>
-			<NavbarContent className="hidden md:flex gap-4 items-center" justify="center">
+			<NavbarContent className="hidden md:flex gap-4 items-center select-none" justify="center">
 				<For each={sectionIds}>
 					{(section) => (
 						<NavbarItem key={section} isActive={activeSection === section}>

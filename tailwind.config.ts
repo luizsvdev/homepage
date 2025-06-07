@@ -10,24 +10,20 @@ export default {
 	],
 	theme: {
 		extend: {
-			fontFamily: {
-				sans: ['Arial']
-			},
+			screens: {
+				'short': {
+					raw: '(max-height: 647px)'
+				}
+		 	},
 			colors: {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)'
 			},
-			animation: {
-				floating: 'floating 6s ease-in-out infinite'
-			},
+			animation: {floating: 'floating 6s ease-in-out infinite'},
 			keyframes: {
 				floating: {
-					'0%, 100%': {
-						transform: 'translateY(0)'
-					},
-					'50%': {
-						transform: 'translateY(-10px)'
-					}
+					'0%, 100%': {transform: 'translateY(0)'},
+					'50%': {transform: 'translateY(-10px)'}
 				}
 			}
 		}
@@ -252,8 +248,6 @@ export default {
 				}
 			}
 		},
-		'layout': {
-			'disabledOpacity': '0.5'
-		}
+		'layout': {'disabledOpacity': '0.5'}
 	})]
 } satisfies Config;

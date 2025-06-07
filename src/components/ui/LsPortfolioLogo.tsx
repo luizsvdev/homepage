@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 type Props = {
-	size?: 40
+	size?: number
 }
 
 export default function LsPortfolioLogo({size = 40}: Props): React.JSX.Element {

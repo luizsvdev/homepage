@@ -42,5 +42,8 @@
 				"cardTooltip": "Click to filter my $CATEGORY skills"
 			}
 		}
+	},
+	"appFooter": {
+		"builtWith": "Built with Next.js and a rubber duck."
 	}
 }

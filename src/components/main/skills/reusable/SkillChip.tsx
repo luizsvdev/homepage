@@ -14,6 +14,7 @@ export default function SkillChip({skill}: SkillBadgeProps): React.JSX.Element {
 			startContent={skill.icon}
 			size="lg"
 			classNames={{content: 'px-1'}}
+			variant="faded"
 		>
 			{skill.label}
 		</Chip>

@@ -42,5 +42,8 @@
 				"cardTooltip": "Clique para filtrar minhas habilidades de $CATEGORY"
 			}
 		}
+	},
+	"appFooter": {
+		"builtWith": "Feito com Next.js e um patinho de borracha."
 	}
 }

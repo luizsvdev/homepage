@@ -3,7 +3,7 @@
 import { Category } from '@/constants/skills';
 import { useSkillsContext } from '@/providers/SkillProvider';
 import {
-	Button, Card, CardHeader, Tooltip 
+	Button, Card, CardHeader, Tooltip
 } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import React, { useCallback, useMemo } from 'react';
@@ -28,7 +28,7 @@ export default function SkillCategoryCard({category}: Readonly<SkillCategoryCard
 	const styleByStatus = useMemo(() => (
 		isCategoryActive
 			? 'border border-primary bg-primary/20'
-			: 'border bg-transparent hover:bg-primary/10'
+			: 'border bg-transparent md:hover:bg-primary/10'
 	), [isCategoryActive]);
 
 
@@ -43,7 +43,7 @@ export default function SkillCategoryCard({category}: Readonly<SkillCategoryCard
 		>
 			<Card
 				classNames={{
-					base: `${styleByStatus} text-center md:hover:scale-105 hover:cursor-pointer`,
+					base: `${styleByStatus} text-center active:scale-105 md:hover:scale-105 hover:cursor-pointer`,
 					header: 'flex flex-col'
 				}}
 				onPressEnd={handleCardClick}
