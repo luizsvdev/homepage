@@ -12,8 +12,8 @@
 				"line2": "Developer"
 			},
 			"description": {
-				"line1": "Debugging code one rubber duck at a time 🦆",
-				"line2": "Passionate about creating elegant solutions to complex problems"
+				"line1": "Just me, the code, and a rubber duck 🦆",
+				"line2": "Solving complex problems with clean, elegant code"
 			},
 			"actions": {
 				"getInTouch": "Get In Touch",
@@ -39,7 +39,7 @@
 		"skills": {
 			"title": "Skills & Technologies",
 			"body": {
-				"cardTooltip": "Click to filter my <CATEGORY> skills"
+				"cardTooltip": "Click to filter my $CATEGORY skills"
 			}
 		}
 	}
