@@ -5,9 +5,7 @@ type Props = {
 	size?: 40
 }
 
-export default function LsPortfolioLogo({
-	size = 40
-}: Props): React.JSX.Element {
+export default function LsPortfolioLogo({size = 40}: Props): React.JSX.Element {
 	return (
 		<Image
 			src="/logos/logo.svg"

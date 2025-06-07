@@ -7,9 +7,7 @@ type ContextProviderProps = {
 	children: React.ReactNode;
 }
 
-export default function ContextProvider({
-	children
-}: ContextProviderProps): React.JSX.Element {
+export default function ContextProvider({children}: ContextProviderProps): React.JSX.Element {
 	return (
 		<NextIntlClientProvider>
 			<UiProvider>

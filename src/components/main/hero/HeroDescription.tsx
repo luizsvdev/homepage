@@ -5,7 +5,7 @@ export default function HeroDescription(): React.JSX.Element {
 	const intl = useTranslations('appMain.hero.description');
 
 	return (
-		<p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+		<p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">
 			{intl('line1')}
 			<br />
 			{intl('line2')}

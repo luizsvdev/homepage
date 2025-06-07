@@ -6,7 +6,7 @@ import { LuChevronDown } from 'react-icons/lu';
 
 export default function HeroScrollIndicator(): React.JSX.Element {
 	return (
-		<div className="justify-self-center animate-bounce">
+		<div className="justify-self-center animate-bounce relative z-10">
 			<Button
 				isIconOnly
 				variant="light"

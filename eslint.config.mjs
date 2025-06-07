@@ -35,10 +35,10 @@ const eslintConfig = [
 			'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
 			'semi': ['warn', 'always'],
 			'object-curly-newline': ['warn', {
-				'ObjectExpression': 'always',
-        'ObjectPattern': { 'multiline': true },
+				'ObjectExpression': { 'multiline': true, 'minProperties': 3 },
+        'ObjectPattern': { 'multiline': true, 'minProperties': 3 },
 				'ImportDeclaration': { 'multiline': true, 'minProperties': 3},
-				'ObjectExpression': 'always'
+				'ObjectExpression': { 'multiline': true, 'minProperties': 3 }
 			}],
 
 			// Stylistic

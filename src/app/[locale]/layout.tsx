@@ -22,9 +22,7 @@ type RootLayout = {
 	params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({
-	children, params
-}: Readonly<RootLayout>): Promise<React.JSX.Element> {
+export default async function RootLayout({children, params}: Readonly<RootLayout>): Promise<React.JSX.Element> {
 	const {locale} = await params;
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();

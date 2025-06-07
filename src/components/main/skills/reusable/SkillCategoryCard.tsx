@@ -2,7 +2,9 @@
 
 import { Category } from '@/constants/skills';
 import { useSkillsContext } from '@/providers/SkillProvider';
-import { Button, Card, CardHeader, Tooltip } from '@heroui/react';
+import {
+	Button, Card, CardHeader, Tooltip 
+} from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import React, { useCallback, useMemo } from 'react';
 
@@ -10,9 +12,7 @@ type SkillCategoryCardProps = {
 	category: Category;
 };
 
-export default function SkillCategoryCard({
-	category
-}: Readonly<SkillCategoryCardProps>): React.JSX.Element {
+export default function SkillCategoryCard({category}: Readonly<SkillCategoryCardProps>): React.JSX.Element {
 	const intl = useTranslations('appMain.skills.body');
 
 	const { toggleCategory, selectedCategories } = useSkillsContext();

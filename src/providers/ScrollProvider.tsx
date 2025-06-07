@@ -1,7 +1,9 @@
 'use client';
 
 import { SECTION_IDS, SectionId } from '@/constants/section';
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+	createContext, useContext, useEffect, useState 
+} from 'react';
 
 interface ScrollContextType {
 	activeSection: SectionId;
