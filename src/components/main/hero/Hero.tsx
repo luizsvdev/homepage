@@ -11,11 +11,13 @@ export default function Hero(): React.JSX.Element {
 	return (
 		<LsContainer textAlign="center" section="home">
 			<HeroProfilePicture />
-			<HeroTitle />
-			<HeroDescription />
-			<HeroActions />
-			<HeroScrollIndicator />
-			<HeroDucks />
+			<div>
+				<HeroTitle />
+				<HeroDescription />
+				<HeroActions />
+				<HeroScrollIndicator />
+				<HeroDucks />
+			</div>
 		</LsContainer>
 	);
 }

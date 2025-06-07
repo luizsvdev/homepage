@@ -13,6 +13,9 @@ export default {
 			screens: {
 				'short': {
 					raw: '(max-height: 647px)'
+				},
+				'medium': {
+					raw: '(max-height: 779px)'
 				}
 		 	},
 			colors: {
