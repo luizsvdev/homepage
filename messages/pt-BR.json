@@ -12,8 +12,8 @@
 				"line2": "Full Stack"
 			},
 			"description": {
-				"line1": "Depurando código, um pato de borracha por vez 🦆",
-				"line2": "Apaixonado por criar soluções elegantes para problemas complexos"
+				"line1": "Só eu, o código, e um patinho de borracha 🦆",
+				"line2": "Resolvendo problemas complexos com código limpo e elegante"
 			},
 			"actions": {
 				"getInTouch": "Fale Comigo",
@@ -23,17 +23,23 @@
 		"about": {
 			"title": "Sobre Mim",
 			"presentation": {
-			  "section1": "Olá! Eu sou o Luiz, desenvolvedor full-stack apaixonado por tecnologia e adepto da técnica do rubber duck debugging. Assim como explicar seu código para um patinho de borracha ajuda a encontrar soluções, encaro cada projeto com clareza, paciência e atenção aos detalhes.",
-        "section2": "Com domínio das tecnologias web modernas, desenvolvo aplicações escaláveis que resolvem problemas do mundo real. Minha filosofia de desenvolvimento é baseada em código limpo, foco na experiência do usuário e aprendizado contínuo."
+				"section1": "Olá! Eu sou o Luiz, desenvolvedor full-stack apaixonado por tecnologia e adepto da técnica do rubber duck debugging. Assim como explicar seu código para um patinho de borracha ajuda a encontrar soluções, encaro cada projeto com clareza, paciência e atenção aos detalhes.",
+				"section2": "Com domínio das tecnologias web modernas, desenvolvo aplicações escaláveis que resolvem problemas do mundo real. Minha filosofia de desenvolvimento é baseada em código limpo, foco na experiência do usuário e aprendizado contínuo."
 			},
 			"quickFacts": {
-			  "title": "Fatos Rápidos",
+				"title": "Fatos Rápidos",
 				"age": "Anos",
-			  "graduation": "Formando em Engenharia de Software",
-			  "experience": "Anos de Experiência",
-			  "basedIn": "Residente no Brasil",
-			  "enthusiast": "Entusiasta do Rubber Duck Debugging",
-			  "teaTeam": "Time do Chá"
+				"graduation": "Formando em Engenharia de Software",
+				"experience": "Anos de Experiência",
+				"basedIn": "Residente no Brasil",
+				"enthusiast": "Entusiasta do Rubber Duck Debugging",
+				"teaTeam": "Time do Chá"
+			}
+		},
+		"skills": {
+			"title": "Habilidades & Tecnologias",
+			"body": {
+				"cardTooltip": "Clique para filtrar minhas habilidades de $CATEGORY"
 			}
 		}
 	}

@@ -2,21 +2,27 @@
 
 import { SECTION_IDS, SectionId } from '@/constants/section';
 import { githubProfile } from '@/constants/social';
-import { useActiveSection } from '@/hooks/useActiveSection';
+import { useScrollContext } from '@/providers/ScrollProvider';
 import For from '@/utils/For';
-import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react';
+import {
+	Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem
+} from '@heroui/react';
 import { useTranslations } from 'next-intl';
-import { JSX } from 'react';
+import { JSX, useMemo } from 'react';
 import { SiGithub } from 'react-icons/si';
-import PortfolioLogo from '../ui/PortfolioLogo';
+import LsPortfolioLogo from '../ui/LsPortfolioLogo';
 import LocaleSwitcher from './LocaleSwitcher';
 
 const sectionIds: SectionId[] = [...SECTION_IDS]
 	.filter((id) => !['home'].includes(id));
 
 export default function Header(): JSX.Element {
-	const t = useTranslations('appHeader');
-	const { activeSection } = useActiveSection();
+	const intl = useTranslations('appHeader');
+	const { activeSection } = useScrollContext();
+
+	const inHomeSection = useMemo(() => (
+		activeSection === 'home'
+	), [activeSection]);
 
 	return (
 		<Navbar
@@ -27,15 +33,25 @@ export default function Header(): JSX.Element {
 			}}
 		>
 			<NavbarBrand as={Link} href="#home" className="flex gap-4 items-center">
-				<PortfolioLogo />
-				<span className="text-xl font-bold">Luiz Silva</span>
+				<LsPortfolioLogo />
+				<span className={`
+					text-xl font-bold
+					${inHomeSection ? 'text-primary' : 'text-white'}
+					transition-colors duration-200`}
+				>
+					Luiz Silva
+				</span>
 			</NavbarBrand>
 			<NavbarContent className="hidden md:flex gap-4 items-center" justify="center">
 				<For each={sectionIds}>
 					{(section) => (
 						<NavbarItem key={section} isActive={activeSection === section}>
-							<Link color={activeSection === section ? 'primary' : 'foreground'} href={`#${section}`}>
-								{t(section)}
+							<Link
+								color={activeSection === section ? 'primary' : 'foreground'}
+								href={`#${section}`}
+								className="transition-colors duration-200"
+							>
+								{intl(section)}
 							</Link>
 						</NavbarItem>
 					)}

@@ -24,7 +24,7 @@ function calculateExperience(): number {
 }
 
 export default function AboutFactsCard(): React.JSX.Element {
-	const t = useTranslations('appMain.about.quickFacts');
+	const intl = useTranslations('appMain.about.quickFacts');
 
 	return (
 		<div>
@@ -36,16 +36,16 @@ export default function AboutFactsCard(): React.JSX.Element {
 				}}
 			>
 				<CardHeader>
-					<h3 className="text-xl font-bold text-secondary">{t('title')}</h3>
+					<h3 className="text-xl font-bold text-secondary">{intl('title')}</h3>
 				</CardHeader>
 				<CardBody>
 					<ul className="space-y-2 text-gray-300">
-						<li>🎂 {calculateAge()} {t('age')}</li>
-						<li>🎓 {t('graduation')}</li>
-						<li>💼 {calculateExperience()}+ {t('experience')}</li>
-						<li>🌍 {t('basedIn')}</li>
-						<li>🦆 {t('enthusiast')}</li>
-						<li>🍵 {t('teaTeam')}</li>
+						<li>🎂 {calculateAge()} {intl('age')}</li>
+						<li>🎓 {intl('graduation')}</li>
+						<li>💼 {calculateExperience()}+ {intl('experience')}</li>
+						<li>🌍 {intl('basedIn')}</li>
+						<li>🦆 {intl('enthusiast')}</li>
+						<li>🍵 {intl('teaTeam')}</li>
 					</ul>
 				</CardBody>
 			</Card>

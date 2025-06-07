@@ -1,7 +1,13 @@
 'use client';
 
 import { LOCALES } from '@/constants/locales';
-import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@heroui/react';
+import {
+	Button,
+	Dropdown,
+	DropdownItem,
+	DropdownMenu,
+	DropdownTrigger
+} from '@heroui/react';
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useCallback } from 'react';
