@@ -9,7 +9,7 @@ type TextAlign = 'left' | 'center' | 'right' | 'justify';
 type Props = {
 	children: React.ReactNode;
 	section: SectionId;
-	title: string;
+	title?: string;
 	titleStartAdornment?: React.ReactNode;
 	titleEndAdornment?: React.ReactNode;
 	textAlign?: TextAlign;
@@ -54,11 +54,11 @@ export default function LsContainer({
 					${containerOrientation}
 				`}
 			>
-				<LsSectionTitle
+				{title && <LsSectionTitle
 					startAdornment={titleStartAdornment}
 					label={title}
 					endAdornment={titleEndAdornment}
-				/>
+				/>}
 				{children}
 			</div>
 		</section>
