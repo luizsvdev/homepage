@@ -1,12 +1,14 @@
 import React from 'react';
-import About from './about/About';
-import Skills from './skills/Skills';
+import AboutSection from './about/AboutSection';
+import ProjectsSection from './projects/ProjectsSection';
+import SkillsSection from './skills/SkillsSection';
 
 export default function Main(): React.JSX.Element {
 	return (
 		<main className="dark text-foreground bg-background">
-			<About />
-			<Skills />
+			<AboutSection />
+			<SkillsSection />
+			<ProjectsSection />
 		</main>
 	);
 }

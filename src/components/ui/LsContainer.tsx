@@ -2,12 +2,16 @@
 
 import { SectionId } from '@/constants/section';
 import React, { useMemo } from 'react';
+import LsSectionTitle from './LsSectionTitle';
 
 
 type TextAlign = 'left' | 'center' | 'right' | 'justify';
 type Props = {
 	children: React.ReactNode;
 	section: SectionId;
+	title: string;
+	titleStartAdornment?: React.ReactNode;
+	titleEndAdornment?: React.ReactNode;
 	textAlign?: TextAlign;
 	forBetterReadability?: boolean;
 	coloredBackground?: boolean;
@@ -16,6 +20,9 @@ type Props = {
 export default function LsContainer({
 	children,
 	section,
+	title,
+	titleStartAdornment,
+	titleEndAdornment,
 	textAlign = 'left',
 	forBetterReadability = false,
 	coloredBackground = false
@@ -47,6 +54,11 @@ export default function LsContainer({
 					${containerOrientation}
 				`}
 			>
+				<LsSectionTitle
+					startAdornment={titleStartAdornment}
+					label={title}
+					endAdornment={titleEndAdornment}
+				/>
 				{children}
 			</div>
 		</section>

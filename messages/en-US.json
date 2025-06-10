@@ -45,6 +45,9 @@
 			"body": {
 				"cardTooltip": "Click to filter my $CATEGORY skills"
 			}
+		},
+		"projects": {
+      "title": "Featured Projects"
 		}
 	},
 	"appFooter": {

@@ -45,6 +45,9 @@
 			"body": {
 				"cardTooltip": "Clique para filtrar minhas habilidades de $CATEGORY"
 			}
+		},
+		"projects": {
+      "title": "Principais Projetos"
 		}
 	},
 	"appFooter": {
