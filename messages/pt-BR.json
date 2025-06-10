@@ -1,4 +1,8 @@
 {
+	"metadata": {
+		"title": "Portfólio | Luiz Silva",
+		"description": "Portfólio de Luiz — Desenvolvedor Web especializado em aplicações modernas"
+	},
 	"appHeader": {
 		"about": "Sobre",
 		"skills": "Habilidades",
@@ -13,7 +17,7 @@
 			},
 			"description": {
 				"line1": "Só eu, o código, e um patinho de borracha 🦆",
-				"line2": "Resolvendo problemas complexos com código limpo e elegante"
+				"line2": "Transformando desafios em código limpo e elegante"
 			},
 			"actions": {
 				"getInTouch": "Fale Comigo",

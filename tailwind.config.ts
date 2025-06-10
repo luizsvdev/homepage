@@ -10,6 +10,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				segoe: ['"SegoeTV"', 'sans-serif']
+			},
 			screens: {
 				'short': {
 					raw: '(max-height: 647px)'

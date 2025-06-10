@@ -13,6 +13,7 @@ import { SiGithub } from 'react-icons/si';
 import LsPortfolioLogo from '../ui/LsPortfolioLogo';
 import LocaleSwitcher from './LocaleSwitcher';
 
+
 const sectionIds: SectionId[] = [...SECTION_IDS]
 	.filter((id) => !['home'].includes(id));
 
@@ -32,11 +33,12 @@ export default function Header(): JSX.Element {
 				wrapper: 'max-w-[1400px]'
 			}}
 		>
-			<NavbarBrand as={Link} href="#home" className="flex gap-4 items-center select-none">
-				<LsPortfolioLogo />
+			<NavbarBrand as={Link} href="#home" className="flex gap-2 items-end select-none">
+				<LsPortfolioLogo className="pb-[3.80px]" />
 				<span className={`
-					text-xl font-bold
+					text-2xl font-bold
 					${inHomeSection ? 'text-primary' : 'text-white'}
+					font-segoe
 					transition-colors duration-200`}
 				>
 					Luiz Silva

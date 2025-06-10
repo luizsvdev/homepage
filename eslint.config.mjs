@@ -1,7 +1,8 @@
-import { FlatCompat, globalIgnore } from '@eslint/eslintrc';
+import { FlatCompat } from '@eslint/eslintrc';
 import stylistic from '@stylistic/eslint-plugin';
 import ts from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import { globalIgnores } from 'eslint/config';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -14,7 +15,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
 	...compat.extends('next/core-web-vitals', 'next/typescript'),
-	globalIgnore([
+	globalIgnores([
 		'**/*.config.ts',
 		'**/*.config.js',
 	]),

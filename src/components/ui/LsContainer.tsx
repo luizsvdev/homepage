@@ -39,9 +39,17 @@ export default function LsContainer({
 				${bgColor}
 			`}
 		>
-			<div className={`px-6 w-full ${containerWidth} flex flex-col items-center justify-center ${containerOrientation}`}>
+			<div
+				className={`
+					px-6 w-full
+					flex flex-col items-center justify-center
+					${containerWidth}
+					${containerOrientation}
+				`}
+			>
 				{children}
 			</div>
 		</section>
 	);
+
 }
