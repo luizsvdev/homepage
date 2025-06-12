@@ -1,5 +1,4 @@
 import LsContainer from '@/components/ui/LsContainer';
-import generateRandomDelay from '@/utils/generateRandomDelay';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React, { useMemo } from 'react';
@@ -13,7 +12,7 @@ export default function AboutSection(): React.JSX.Element {
 		alt="Rubber Duck"
 		width={48}
 		height={48}
-		className={`animate-floating ${generateRandomDelay()}`}
+		className="animate-floating [animation-delay:100ms]"
 	/>), []);
 
 	return (

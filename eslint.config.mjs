@@ -40,10 +40,10 @@ const eslintConfig = [
 			'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
 			'semi': ['warn', 'always'],
 			'object-curly-newline': ['warn', {
-				'ObjectExpression': { 'multiline': true, 'minProperties': 3 },
-        'ObjectPattern': { 'multiline': true, 'minProperties': 3 },
-				'ImportDeclaration': { 'multiline': true, 'minProperties': 3},
-				'ObjectExpression': { 'multiline': true, 'minProperties': 3 }
+				'ObjectExpression': { 'multiline': true, 'minProperties': 4 },
+        'ObjectPattern': { 'multiline': true, 'minProperties': 4 },
+				'ImportDeclaration': { 'multiline': true, 'minProperties': 4 },
+				'ObjectExpression': { 'multiline': true, 'minProperties': 4 }
 			}],
 
 			// Stylistic
@@ -51,6 +51,7 @@ const eslintConfig = [
 			'stylistic/no-tabs': 'off',
 			'stylistic/indent': ['warn', 'tab'],
 			'stylistic/jsx-quotes': ['warn', 'prefer-double'],
+			'stylistic/object-curly-spacing': ['warn', 'always'],
 
 			// TypeScript
 			'@typescript-eslint/no-unused-vars': ['warn', {

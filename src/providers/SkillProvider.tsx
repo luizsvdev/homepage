@@ -1,8 +1,6 @@
 'use client';
 
-import {
-	CategoryType, groupedSkills, Skill 
-} from '@/constants/skills';
+import { CategoryType, groupedSkills, Skill } from '@/constants/skills';
 import React, {
 	createContext,
 	ReactNode,

@@ -7,7 +7,9 @@ type LsSectionTitleProps = {
 };
 
 export default function LsSectionTitle({
-	label, startAdornment, endAdornment
+	label,
+	startAdornment,
+	endAdornment 
 }: Readonly<LsSectionTitleProps>): React.JSX.Element {
 	return (
 		<h1 className="text-4xl font-bold select-none mb-8 flex justify-center items-center gap-2">

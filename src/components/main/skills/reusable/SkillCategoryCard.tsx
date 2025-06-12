@@ -12,7 +12,7 @@ type SkillCategoryCardProps = {
 	category: Category;
 };
 
-export default function SkillCategoryCard({category}: Readonly<SkillCategoryCardProps>): React.JSX.Element {
+export default function SkillCategoryCard({ category }: Readonly<SkillCategoryCardProps>): React.JSX.Element {
 	const intl = useTranslations('appMain.skills.body');
 
 	const { toggleCategory, selectedCategories } = useSkillsContext();
