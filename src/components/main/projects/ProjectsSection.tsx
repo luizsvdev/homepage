@@ -1,29 +1,28 @@
+import DuckImage from '@/components/ui/DuckImage';
 import LsContainer from '@/components/ui/LsContainer';
+import { allProjects } from '@/constants/projects';
+import For from '@/utils/For';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import React, { useMemo } from 'react';
+import React from 'react';
+import ProjectCard from './reusable/ProjectCard';
 
 export default function ProjectsSection(): React.JSX.Element {
 	const intl = useTranslations('appMain.projects');
-
-	const duck = useMemo(() => (<div className="-scale-x-100">
-		<Image
-			src="/images/rubber_duck_2.png"
-			alt="Rubber Duck"
-			width={48}
-			height={48}
-			className="animate-floating [animate-delay:200ms]"
-		/>
-	</div>), []);
 
 	return (
 		<LsContainer
 			section="projects"
 			textAlign="center"
 			title={intl('title')}
-			titleStartAdornment={duck}
+			titleStartAdornment={<DuckImage
+				duckSize={48}
+				className="animate-floating [animate-delay:200ms]"
+				duckClasses="-scale-x-100"
+			/>}
 		>
-		  &nbsp;
+			<For each={allProjects}>
+				{(item) => (<ProjectCard key={item.value} project={item} />)}
+			</For>
 		</LsContainer>
 	);
 }

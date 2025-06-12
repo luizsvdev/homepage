@@ -3,7 +3,6 @@ import { Stack } from './stack';
 export type Project = {
 	title: string;
 	value: string;
-	description: string;
 	logo?: string;
 	projectUrl: string;
 	githubUrl: string;
@@ -14,8 +13,7 @@ export const allProjects: Project[] = [
 	{
 		title: 'Webbicho',
 		value: 'webbicho',
-		description: '',
-		logo: '',
+		logo: 'https://webbicho.com/images/w.svg',
 		projectUrl: 'https://webbicho.com',
 		githubUrl: 'https://github.com/webbicho',
 		stack: [
