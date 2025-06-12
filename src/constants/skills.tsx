@@ -1,29 +1,29 @@
 import React from 'react';
 import { FaAws } from 'react-icons/fa';
 import {
-	LuCloud, LuCode, LuServer, LuSmartphone
+    LuCloud, LuCode, LuServer, LuSmartphone
 } from 'react-icons/lu';
 import { RiJavaLine } from 'react-icons/ri';
 import {
-	SiAndroid,
-	SiAngular,
-	SiDigitalocean,
-	SiDocker,
-	SiExpress,
-	SiJavascript,
-	SiKotlin,
-	SiKubernetes,
-	SiNextdotjs,
-	SiNuxtdotjs,
-	SiOracle,
-	SiPython,
-	SiReact,
-	SiSass,
-	SiSpring,
-	SiTailwindcss,
-	SiTypescript,
-	SiVercel,
-	SiVuedotjs
+    SiAndroid,
+    SiAngular,
+    SiDigitalocean,
+    SiDocker,
+    SiExpress,
+    SiJavascript,
+    SiKotlin,
+    SiKubernetes,
+    SiNextdotjs,
+    SiNuxtdotjs,
+    SiOracle,
+    SiPython,
+    SiReact,
+    SiSass,
+    SiSpring,
+    SiTailwindcss,
+    SiTypescript,
+    SiVercel,
+    SiVuedotjs
 } from 'react-icons/si';
 import { Stack } from './stack';
 
@@ -87,5 +87,9 @@ export const groupedSkills: Record<CategoryType, Skill[]> = {
 	]
 };
 
-export const allSkills = Object.entries(groupedSkills)
-	.flatMap(([_, skills]) => skills);
+export const allSkills = Array.from(
+	Object.values(groupedSkills)
+		.flat()
+		.reduce((map, skill) => map.set(skill.value, skill), new Map<string, Skill>())
+		.values()
+);

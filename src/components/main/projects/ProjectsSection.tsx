@@ -19,6 +19,7 @@ export default function ProjectsSection(): React.JSX.Element {
 				className="animate-floating [animate-delay:200ms]"
 				duckClasses="-scale-x-100"
 			/>}
+			forBetterReadability
 		>
 			<For each={allProjects}>
 				{(item) => (<ProjectCard key={item.value} project={item} />)}
