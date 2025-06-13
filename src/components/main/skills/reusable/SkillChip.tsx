@@ -11,7 +11,7 @@ type SkillBadgeProps = {
 export default function SkillChip({ skill }: SkillBadgeProps): React.JSX.Element {
 	return (
 		<Chip
-			startContent={skill.icon}
+			startContent={skill.icon()}
 			size="lg"
 			classNames={{ content: 'px-1' }}
 			variant="faded"

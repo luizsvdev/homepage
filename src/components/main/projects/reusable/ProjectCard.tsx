@@ -29,7 +29,9 @@ export default function ProjectCard({ project }: ProjectCardProps): React.JSX.El
 	return (
 		<Card
 			classNames={{
-				base: 'p-2 md:hover:scale-105 bg-transparent border border-primary-400',
+				base: 'p-2 md:hover:scale-105 border border-primary-200 bg-primary/10 ' +
+				  'hover:bg-primary/15 hover:border-primary-400 ' +
+					'md:basis-[calc(50%-2rem)] lg:basis-[calc(33.333%-2rem)]',
 				header: 'flex items-center justify-between',
 				body: 'gap-4',
 				footer: 'gap-4'
