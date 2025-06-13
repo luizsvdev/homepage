@@ -53,6 +53,9 @@
       "webbicho": {
       	"description": "Webbicho é uma plataforma feita para conectar ONGs de proteção animal com pessoas interessadas em adotar, ajudar ou se envolver. Simples, intuitiva e pensada para quem não é da área tech."
       }
+		},
+		"contact": {
+		  "title": "Contato"
 		}
 	},
 	"appFooter": {
