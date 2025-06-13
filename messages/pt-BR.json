@@ -55,7 +55,12 @@
       }
 		},
 		"contact": {
-		  "title": "Contato"
+		  "title": "Vamos Trabalhar Juntos",
+			"description": {
+			  "line1": "Tem um projeto que precisa da ajuda um patinho de borracha?",
+				"line2": "Vamos colaborar e criar algo incrível!"
+			},
+			"startConversation": "Pronto para conversar"
 		}
 	},
 	"appFooter": {

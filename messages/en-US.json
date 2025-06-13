@@ -55,7 +55,12 @@
       }
 		},
 		"contact": {
-		  "title": "Contact"
+		  "title": "Let's Debug Together",
+			"description": {
+	      "line1": "Got a project that needs help of a rubber ducky?",
+				"line2": "Let's collaborate and create something amazing!"
+			},
+			"startConversation": "Ready to quack"
 		}
 	},
 	"appFooter": {
