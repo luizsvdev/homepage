@@ -47,7 +47,12 @@
 			}
 		},
 		"projects": {
-      "title": "Featured Projects"
+      "title": "Featured Projects",
+      "code": "Code",
+      "demo": "Demo",
+      "webbicho": {
+      	"description": "Webbicho is a platform that connects animal welfare NGOs with people looking to adopt, support, or get involved. Simple, intuitive, and built for non-tech users."
+      }
 		}
 	},
 	"appFooter": {

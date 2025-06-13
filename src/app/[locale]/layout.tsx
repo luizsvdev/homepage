@@ -17,7 +17,7 @@ type MetadataParams = {
 	params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({params}: MetadataParams): Promise<Metadata> {
+export async function generateMetadata({ params }: MetadataParams): Promise<Metadata> {
 	const { locale } = await params;
 	const messages = await getMessages({ locale });
 
@@ -33,8 +33,8 @@ type RootLayout = {
 	params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({children, params}: Readonly<RootLayout>): Promise<React.JSX.Element> {
-	const {locale} = await params;
+export default async function RootLayout({ children, params }: Readonly<RootLayout>): Promise<React.JSX.Element> {
+	const { locale } = await params;
 
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();

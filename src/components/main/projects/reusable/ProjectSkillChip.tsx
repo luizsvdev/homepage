@@ -4,15 +4,15 @@ import { Skill } from '@/constants/skills';
 import { Chip } from '@heroui/react';
 import React from 'react';
 
-type SkillBadgeProps = {
+type ProjectSkillBadgeProps = {
 	skill: Skill;
 }
 
-export default function SkillChip({ skill }: SkillBadgeProps): React.JSX.Element {
+export default function ProjectSkillChip({ skill }: ProjectSkillBadgeProps): React.JSX.Element {
 	return (
 		<Chip
-			startContent={skill.icon()}
-			size="lg"
+			startContent={skill.icon(12)}
+			size="sm"
 			classNames={{ content: 'px-1' }}
 			variant="faded"
 		>

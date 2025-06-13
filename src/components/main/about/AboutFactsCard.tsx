@@ -1,8 +1,6 @@
 'use client';
 
-import {
-	Card, CardBody, CardHeader 
-} from '@heroui/react';
+import { Card, CardBody, CardHeader } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
