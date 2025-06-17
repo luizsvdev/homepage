@@ -5,9 +5,9 @@ import { allSkills } from '@/constants/skills';
 import For from '@/utils/For';
 import Show from '@/utils/Show';
 import {
-    Button,
-    Card, CardBody, CardFooter, CardHeader,
-    Link
+	Button,
+	Card, CardBody, CardFooter, CardHeader,
+	Link
 } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';

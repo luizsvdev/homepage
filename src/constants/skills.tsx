@@ -1,30 +1,30 @@
 import React from 'react';
 import { FaAws } from 'react-icons/fa';
 import {
-  LuCloud, LuCode, LuServer, LuSmartphone
+	LuCloud, LuCode, LuServer, LuSmartphone
 } from 'react-icons/lu';
 import { RiJavaLine } from 'react-icons/ri';
 import {
-  SiAndroid,
-  SiAngular,
-  SiCloudflare,
-  SiDigitalocean,
-  SiDocker,
-  SiExpress,
-  SiJavascript,
-  SiKotlin,
-  SiKubernetes,
-  SiNextdotjs,
-  SiNuxtdotjs,
-  SiOracle,
-  SiPython,
-  SiReact,
-  SiSass,
-  SiSpring,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-  SiVuedotjs
+	SiAndroid,
+	SiAngular,
+	SiCloudflare,
+	SiDigitalocean,
+	SiDocker,
+	SiExpress,
+	SiJavascript,
+	SiKotlin,
+	SiKubernetes,
+	SiNextdotjs,
+	SiNuxtdotjs,
+	SiOracle,
+	SiPython,
+	SiReact,
+	SiSass,
+	SiSpring,
+	SiTailwindcss,
+	SiTypescript,
+	SiVercel,
+	SiVuedotjs
 } from 'react-icons/si';
 import { Stack } from './stack';
 
