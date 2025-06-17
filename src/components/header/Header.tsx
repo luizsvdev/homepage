@@ -1,7 +1,7 @@
 'use client';
 
 import { SECTION_IDS, SectionId } from '@/constants/section';
-import { github } from '@/constants/social';
+import { linkedin } from '@/constants/social';
 import { useScrollContext } from '@/providers/ScrollProvider';
 import For from '@/utils/For';
 import {
@@ -9,7 +9,7 @@ import {
 } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import { JSX, useMemo } from 'react';
-import { SiGithub } from 'react-icons/si';
+import { SiLinkedin } from 'react-icons/si';
 import LsPortfolioLogo from '../ui/LsPortfolioLogo';
 import LocaleSwitcher from './LocaleSwitcher';
 
@@ -67,12 +67,12 @@ export default function Header(): JSX.Element {
 					<Button
 						isIconOnly
 						variant="light"
-						aria-label="GitHub"
+						aria-label="LinkedIn"
 						as={Link}
-						href={github}
+						href={linkedin}
 						isExternal
 					>
-						<SiGithub size={24} />
+						<SiLinkedin size={24} />
 					</Button>
 				</NavbarItem>
 			</NavbarContent>
