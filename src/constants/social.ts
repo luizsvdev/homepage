@@ -4,4 +4,4 @@ export const social = {
 	whatsappContact: 'https://wa.me/5546991177172'
 } as const;
 
-export const { githubProfile, linkedinProfile } = social;
+export const { githubProfile, linkedinProfile, whatsappContact } = social;
