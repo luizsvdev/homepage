@@ -1,29 +1,30 @@
 import React from 'react';
 import { FaAws } from 'react-icons/fa';
 import {
-    LuCloud, LuCode, LuServer, LuSmartphone
+  LuCloud, LuCode, LuServer, LuSmartphone
 } from 'react-icons/lu';
 import { RiJavaLine } from 'react-icons/ri';
 import {
-    SiAndroid,
-    SiAngular,
-    SiDigitalocean,
-    SiDocker,
-    SiExpress,
-    SiJavascript,
-    SiKotlin,
-    SiKubernetes,
-    SiNextdotjs,
-    SiNuxtdotjs,
-    SiOracle,
-    SiPython,
-    SiReact,
-    SiSass,
-    SiSpring,
-    SiTailwindcss,
-    SiTypescript,
-    SiVercel,
-    SiVuedotjs
+  SiAndroid,
+  SiAngular,
+  SiCloudflare,
+  SiDigitalocean,
+  SiDocker,
+  SiExpress,
+  SiJavascript,
+  SiKotlin,
+  SiKubernetes,
+  SiNextdotjs,
+  SiNuxtdotjs,
+  SiOracle,
+  SiPython,
+  SiReact,
+  SiSass,
+  SiSpring,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVuedotjs
 } from 'react-icons/si';
 import { Stack } from './stack';
 
@@ -38,9 +39,9 @@ export type Category = {
 
 export const allCategories: Category[] = [
 	{ label: 'Frontend', value: 'frontend', icon: <LuCode size={36} className="text-secondary" /> },
-	{ label: 'Backend', value: 'backend', icon: <LuServer size={36} className="text-secondary"  /> },
+	{ label: 'Backend', value: 'backend', icon: <LuServer size={36} className="text-secondary" /> },
 	{ label: 'DevOps', value: 'devops', icon: <LuCloud size={36} className="text-secondary" /> },
-	{ label: 'Mobile', value: 'mobile', icon: <LuSmartphone size={36} className="text-secondary"  /> }
+	{ label: 'Mobile', value: 'mobile', icon: <LuSmartphone size={36} className="text-secondary" /> }
 ];
 
 export type Skill = {
@@ -74,8 +75,9 @@ export const groupedSkills: Record<CategoryType, Skill[]> = {
 	devops: [
 		{ label: 'AWS', value: 'aws', icon: (size: number = 16) => <FaAws size={size} /> },
 		{ label: 'OCI', value: 'oci', icon: (size: number = 16) => <SiOracle size={size} /> },
-		{ label: 'Vercel', value: 'vercel', icon: (size: number = 16) => <SiVercel size={size} /> },
 		{ label: 'DigitalOcean', value: 'digitalocean', icon: (size: number = 16) => <SiDigitalocean size={size} /> },
+		{ label: 'Cloudflare', value: 'cloudflare', icon: (size: number = 16) => <SiCloudflare size={size} /> },
+		{ label: 'Vercel', value: 'vercel', icon: (size: number = 16) => <SiVercel size={size} /> },
 		{ label: 'Docker', value: 'docker', icon: (size: number = 16) => <SiDocker size={size} /> },
 		{ label: 'Kubernetes', value: 'kubernetes', icon: (size: number = 16) => <SiKubernetes size={size} /> }
 	],

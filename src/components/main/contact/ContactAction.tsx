@@ -1,10 +1,8 @@
 import DuckImage from '@/components/ui/DuckImage';
-import { whatsappContact } from '@/constants/social';
-import { Button } from '@heroui/react';
+import { Button, Link } from '@heroui/react';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import React from 'react';
-import { SiWhatsapp } from 'react-icons/si';
+import { LuMail } from 'react-icons/lu';
 
 export default function ContactAction(): React.JSX.Element {
 	const intl = useTranslations('appMain.contact');
@@ -16,12 +14,10 @@ export default function ContactAction(): React.JSX.Element {
 				className="animate-bounce"
 			/>
 			<Button
-				startContent={<SiWhatsapp size={20} />}
 				color="primary"
-				size="lg"
+				startContent={<LuMail size={20} />}
 				as={Link}
-				href={whatsappContact}
-				target="_blank"
+				href="mailto:luizsv.dev@gmail.com"
 			>
 				{intl('startConversation')}
 			</Button>

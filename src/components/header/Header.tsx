@@ -1,7 +1,7 @@
 'use client';
 
 import { SECTION_IDS, SectionId } from '@/constants/section';
-import { githubProfile } from '@/constants/social';
+import { github } from '@/constants/social';
 import { useScrollContext } from '@/providers/ScrollProvider';
 import For from '@/utils/For';
 import {
@@ -13,9 +13,9 @@ import { SiGithub } from 'react-icons/si';
 import LsPortfolioLogo from '../ui/LsPortfolioLogo';
 import LocaleSwitcher from './LocaleSwitcher';
 
-
 const sectionIds: SectionId[] = [...SECTION_IDS]
 	.filter((id) => !['home'].includes(id));
+
 
 export default function Header(): JSX.Element {
 	const intl = useTranslations('appHeader');
@@ -69,8 +69,8 @@ export default function Header(): JSX.Element {
 						variant="light"
 						aria-label="GitHub"
 						as={Link}
-						href={githubProfile}
-						target="_blank"
+						href={github}
+						isExternal
 					>
 						<SiGithub size={24} />
 					</Button>

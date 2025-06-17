@@ -1,6 +1,6 @@
 'use client';
 
-import { githubProfile, linkedinProfile } from '@/constants/social';
+import { github, linkedin } from '@/constants/social';
 import { Button, Link } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import React from 'react';
@@ -23,8 +23,8 @@ export default function AboutPresentation(): React.JSX.Element {
 					variant="ghost"
 					startContent={<SiGithub size={20} />}
 					as={Link}
-					href={githubProfile}
-					target="_blank"
+					href={github}
+					isExternal
 				>
 					GitHub
 				</Button>
@@ -33,8 +33,8 @@ export default function AboutPresentation(): React.JSX.Element {
 					variant="ghost"
 					startContent={<SiLinkedin size={20} />}
 					as={Link}
-					href={linkedinProfile}
-					target="_blank"
+					href={linkedin}
+					isExternal
 				>
 					LinkedIn
 				</Button>

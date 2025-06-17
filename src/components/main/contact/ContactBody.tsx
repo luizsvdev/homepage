@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ContactAction from './ContactAction';
+import ContactOptions from './ContactOptions';
 import ContactTitle from './ContactTitle';
 
 export default function ContactBody(): React.JSX.Element {
@@ -10,6 +11,7 @@ export default function ContactBody(): React.JSX.Element {
 		<>
 			<ContactTitle />
 			<ContactAction />
+			<ContactOptions />
 		</>
 	);
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { githubProfile } from '@/constants/social';
+import { github } from '@/constants/social';
 import { Button, Link } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import React from 'react';
@@ -25,8 +25,8 @@ export default function HeroActions(): React.JSX.Element {
 				variant="ghost"
 				startContent={<SiGithub size={20} />}
 				as={Link}
-				href={githubProfile}
-				target="_blank"
+				href={github}
+				isExternal
 			>
 				{intl('viewWork')}
 			</Button>

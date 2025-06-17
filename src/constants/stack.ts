@@ -17,6 +17,7 @@ export type Stack =
   | 'oci'
   | 'vercel'
   | 'digitalocean'
+  | 'cloudflare'
   | 'docker'
   | 'kubernetes'
   | 'android'
