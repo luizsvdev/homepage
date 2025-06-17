@@ -12,7 +12,7 @@ export default function ProjectSkillChip({ skill }: ProjectSkillBadgeProps): Rea
 	return (
 		<Chip
 			startContent={skill.icon(12)}
-			size="sm"
+			size="md"
 			classNames={{ content: 'px-1' }}
 			variant="faded"
 		>

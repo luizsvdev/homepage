@@ -48,11 +48,25 @@
 		},
 		"projects": {
       "title": "Principais Projetos",
-      "code": "Código",
-      "demo": "Demonstração",
+      "code": "Ver Código",
+      "demo": "Ver Site",
       "webbicho": {
+        "name": "Webbicho",
       	"description": "Webbicho é uma plataforma feita para conectar ONGs de proteção animal com pessoas interessadas em adotar, ajudar ou se envolver. Simples, intuitiva e pensada para quem não é da área tech."
+      },
+      "portfolio": {
+        "name": "Portfólio Pessoal",
+        "description": "Portfólio pessoal feito com Next.js, boas práticas, design responsivo, SEO e um toque de patinho de borracha."
       }
+		},
+		"contact": {
+		  "title": "Vamos Trabalhar Juntos",
+			"description": {
+			  "line1": "Tem um projeto que precisa da ajuda um patinho de borracha?",
+				"line2": "Vamos colaborar e criar algo incrível!"
+			},
+			"startConversation": "Pronto para conversar",
+			"otherContacts": "Onde me encontrar:"
 		}
 	},
 	"appFooter": {

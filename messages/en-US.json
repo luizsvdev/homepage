@@ -21,7 +21,7 @@
 			},
 			"actions": {
 				"getInTouch": "Get In Touch",
-				"viewWork": "View Work"
+				"viewWork": "View GitHub"
 			}
 		},
 		"about": {
@@ -48,11 +48,25 @@
 		},
 		"projects": {
       "title": "Featured Projects",
-      "code": "Code",
-      "demo": "Demo",
+      "code": "View Code",
+      "demo": "Visit Site",
       "webbicho": {
+        "name": "Webbicho",
       	"description": "Webbicho is a platform that connects animal welfare NGOs with people looking to adopt, support, or get involved. Simple, intuitive, and built for non-tech users."
+      },
+      "portfolio": {
+        "name": "Personal Portfolio",
+        "description": "Personal portfolio built with Next.js, following best practices, responsive design, SEO optimization, and a touch of rubber duck debugging."
       }
+		},
+		"contact": {
+		  "title": "Let's Debug Together",
+			"description": {
+	      "line1": "Got a project that needs help of a rubber ducky?",
+				"line2": "Let's collaborate and create something amazing!"
+			},
+			"startConversation": "Ready to quack",
+			"otherContacts": "Where to find me:"
 		}
 	},
 	"appFooter": {

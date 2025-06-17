@@ -3,10 +3,11 @@
 import { Project } from '@/constants/projects';
 import { allSkills } from '@/constants/skills';
 import For from '@/utils/For';
+import Show from '@/utils/Show';
 import {
-	Button,
-	Card, CardBody, CardFooter, CardHeader,
-	Link
+    Button,
+    Card, CardBody, CardFooter, CardHeader,
+    Link
 } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -17,9 +18,13 @@ import ProjectSkillChip from './ProjectSkillChip';
 
 type ProjectCardProps = {
 	project: Project;
+	showViewProject?: boolean
 }
 
-export default function ProjectCard({ project }: ProjectCardProps): React.JSX.Element {
+export default function ProjectCard({
+	project,
+	showViewProject = true
+}: ProjectCardProps): React.JSX.Element {
 	const intl = useTranslations('appMain.projects');
 
 	const usedSkills = useMemo(() => (
@@ -38,11 +43,11 @@ export default function ProjectCard({ project }: ProjectCardProps): React.JSX.El
 			}}
 		>
 			<CardHeader>
-				<h3 className="font-bold text-secondary text-2xl">{project.title}</h3>
+				<h3 className="font-bold text-secondary text-2xl">{intl(`${project.value}.name`)}</h3>
 				<div>
 					<Image
 						src={project.logo ?? ''}
-						alt={project.title}
+						alt={intl(`${project.value}.name`)}
 						width={36}
 						height={36}
 					/>
@@ -63,20 +68,22 @@ export default function ProjectCard({ project }: ProjectCardProps): React.JSX.El
 					startContent={<SiGithub size={20} />}
 					as={Link}
 					href={project.githubUrl}
-					target="_blank"
+					isExternal
 				>
 					{intl('code')}
 				</Button>
-				<Button
-					variant="ghost"
-					color="secondary"
-					startContent={<LuExternalLink size={20} />}
-					as={Link}
-					href={project.projectUrl}
-					target="_blank"
-				>
-					{intl('demo')}
-				</Button>
+				<Show when={showViewProject}>
+					<Button
+						variant="ghost"
+						color="secondary"
+						startContent={<LuExternalLink size={20} />}
+						as={Link}
+						href={project.projectUrl}
+						isExternal
+					>
+						{intl('demo')}
+					</Button>
+				</Show>
 			</CardFooter>
 		</Card>
 	);
