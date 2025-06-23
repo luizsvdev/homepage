@@ -7,7 +7,9 @@ import Show from '@/utils/Show';
 import {
 	Button,
 	Card, CardBody, CardFooter, CardHeader,
-	Link
+	Chip,
+	Link,
+	Tooltip
 } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -19,7 +21,7 @@ import ProjectSkillChip from './ProjectSkillChip';
 type ProjectCardProps = {
 	project: Project;
 	showViewProject?: boolean
-}
+};
 
 export default function ProjectCard({
 	project,
@@ -35,15 +37,29 @@ export default function ProjectCard({
 		<Card
 			classNames={{
 				base: 'p-2 md:hover:scale-105 border border-primary-200 bg-primary/10 ' +
-				  'hover:bg-primary/15 hover:border-primary-400 ' +
-					'md:basis-[calc(50%-2rem)] lg:basis-[calc(33.333%-2rem)]',
+          'hover:bg-primary/15 hover:border-primary-400 ' +
+          'md:basis-[calc(50%-2rem)] lg:basis-[calc(33.333%-2rem)]',
 				header: 'flex items-center justify-between',
 				body: 'gap-4',
 				footer: 'gap-4'
 			}}
 		>
 			<CardHeader>
-				<h3 className="font-bold text-secondary text-2xl">{intl(`${project.value}.name`)}</h3>
+				<h3 className="font-bold text-secondary text-2xl flex items-center gap-2">
+					<span>
+						{intl(`${project.value}.name`)}
+					</span>
+					<Show when={project.workInProgress}>
+						<Tooltip
+							content={intl('workInProgress')}
+							closeDelay={100}
+						>
+							<Chip color="warning" variant="bordered" size="sm">
+								WIP
+							</Chip>
+						</Tooltip>
+					</Show>
+				</h3>
 				<div>
 					<Image
 						src={project.logo ?? ''}
