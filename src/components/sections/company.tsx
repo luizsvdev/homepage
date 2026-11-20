@@ -9,7 +9,7 @@ import { site } from "@/content/site";
 export function Company({ t }: { t: Dictionary }) {
   return (
     <section
-      id="l2mu"
+      id={t.ids.company}
       aria-labelledby="company-title"
       className="relative overflow-hidden bg-l2mu-bg font-brand text-white [color-scheme:dark]"
     >
@@ -25,12 +25,15 @@ export function Company({ t }: { t: Dictionary }) {
         <div className="mt-8 grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
           <div>
             <Reveal delay={0.06}>
-              <div className="flex items-center gap-5">
-                <img src="/brand/l2mu.svg" alt="" width={72} height={72} className="size-16 sm:size-[72px]" />
-                <h2 id="company-title" className="text-6xl font-extrabold tracking-tight sm:text-7xl">
-                  {t.company.title}
-                </h2>
-              </div>
+              <h2 id="company-title">
+                <img
+                  src="/brand/l2mu-wordmark.svg"
+                  alt={t.company.title}
+                  width={290}
+                  height={120}
+                  className="h-16 w-auto sm:h-20"
+                />
+              </h2>
             </Reveal>
             {t.company.body.map((p, i) => (
               <Reveal key={i} delay={0.12 + i * 0.06}>

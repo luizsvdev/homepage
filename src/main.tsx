@@ -9,6 +9,7 @@ import "@fontsource/instrument-serif/400-italic.css";
 import "./index.css";
 
 import { App } from "./app";
+import { translateHash } from "./content/i18n";
 import type { Locale } from "./content/site";
 
 const locale: Locale = /^\/en(\/|$)/.test(window.location.pathname) ? "en" : "pt-BR";
@@ -22,3 +23,10 @@ const app = (
 // Production pages are prerendered (scripts/prerender.js); dev serves an empty shell.
 if (root.hasChildNodes()) hydrateRoot(root, app);
 else createRoot(root).render(app);
+
+// An anchor from the other language (/en#trajetoria) lands on the same section.
+const localHash = translateHash(window.location.hash, locale);
+if (localHash && localHash !== window.location.hash) {
+  history.replaceState(null, "", localHash);
+  requestAnimationFrame(() => document.querySelector(localHash)?.scrollIntoView());
+}

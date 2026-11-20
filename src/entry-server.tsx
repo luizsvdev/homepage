@@ -37,12 +37,7 @@ export function head(locale: Locale) {
         jobTitle: locale === "en" ? "Software Engineer" : "Engenheiro de Software",
         email: `mailto:${site.email}`,
         telephone: `+${site.whatsapp}`,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: site.location.city,
-          addressRegion: site.location.region,
-          addressCountry: site.location.country,
-        },
+        address: { "@type": "PostalAddress", addressCountry: site.country },
         worksFor: { "@id": `${site.company.url}/#organization` },
         knowsAbout: [
           "Software Engineering",

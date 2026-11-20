@@ -31,7 +31,7 @@ export function Hero({ t }: { t: Dictionary }) {
                 <ArrowUpRight aria-hidden="true" className="size-4" />
               </a>
               <a
-                href="#trajetoria"
+                href={`#${t.ids.career}`}
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
               >
                 {t.hero.ctaSecondary}
@@ -43,8 +43,8 @@ export function Hero({ t }: { t: Dictionary }) {
         <div className="mx-auto w-full max-w-sm md:max-w-none">
           <figure className="relative overflow-hidden rounded-3xl border border-border bg-[#0d0d0d] shadow-2xl shadow-black/10">
             <picture>
-              <source type="image/avif" srcSet="/img/luiz-480.avif 480w, /img/luiz-800.avif 800w" sizes="(min-width: 768px) 420px, 90vw" />
-              <source type="image/webp" srcSet="/img/luiz-480.webp 480w, /img/luiz-800.webp 800w" sizes="(min-width: 768px) 420px, 90vw" />
+              <source type="image/avif" srcSet="/img/luiz-480.avif 480w, /img/luiz-800.avif 800w, /img/luiz-1200.avif 1200w" sizes="(min-width: 768px) 420px, 90vw" />
+              <source type="image/webp" srcSet="/img/luiz-480.webp 480w, /img/luiz-800.webp 800w, /img/luiz-1200.webp 1200w" sizes="(min-width: 768px) 420px, 90vw" />
               <img
                 src="/img/luiz-800.jpg"
                 alt={t.hero.photoAlt}

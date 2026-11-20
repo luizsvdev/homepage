@@ -7,14 +7,14 @@ import sharp from "sharp";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const pub = path.join(root, "public");
-const src = path.join(root, "assets", "luiz.jpg");
+const src = path.join(root, "assets", "luiz.png");
 await mkdir(path.join(pub, "img"), { recursive: true });
 
-for (const size of [480, 800]) {
+for (const size of [480, 800, 1200]) {
   const base = sharp(src).resize(size, size, { fit: "cover" });
-  await base.clone().avif({ quality: 55 }).toFile(path.join(pub, "img", `luiz-${size}.avif`));
-  await base.clone().webp({ quality: 78 }).toFile(path.join(pub, "img", `luiz-${size}.webp`));
-  await base.clone().jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(pub, "img", `luiz-${size}.jpg`));
+  await base.clone().avif({ quality: 62, effort: 6 }).toFile(path.join(pub, "img", `luiz-${size}.avif`));
+  await base.clone().webp({ quality: 85 }).toFile(path.join(pub, "img", `luiz-${size}.webp`));
+  await base.clone().jpeg({ quality: 86, mozjpeg: true }).toFile(path.join(pub, "img", `luiz-${size}.jpg`));
 }
 
 const og = {

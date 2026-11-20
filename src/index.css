@@ -17,17 +17,15 @@
   --color-l2mu-bg: #0b0b0b;
   --color-l2mu-primary: #c8ff00;
   --color-l2mu-accent: #2a2a2a;
+}
 
+/* `inline` so var(--duration) resolves on the marquee element, not on :root. */
+@theme inline {
   --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-shiny-text: shiny-text 8s infinite;
 
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(calc(-100% - var(--gap))); }
-  }
-  @keyframes shiny-text {
-    0%, 90%, 100% { background-position: calc(-100% - var(--shiny-width)) 0; }
-    30%, 60% { background-position: calc(100% + var(--shiny-width)) 0; }
   }
 }
 

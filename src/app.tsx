@@ -16,7 +16,7 @@ export function App({ locale }: { locale: Locale }) {
   return (
     <MotionConfig reducedMotion="user">
       <Header t={t} locale={locale} />
-      <main id="conteudo">
+      <main id={t.ids.main}>
         <Hero t={t} />
         <Approach t={t} />
         <Career t={t} />

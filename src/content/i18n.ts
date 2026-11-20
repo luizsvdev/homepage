@@ -1,16 +1,21 @@
 import type { Locale } from "./site";
 
+export type ExperienceId = "flow" | "l2mu" | "viasoft" | "habil";
+
 type Experience = {
+  id: ExperienceId;
   company: string;
   role: string;
   period: string;
   summary: string;
   highlights: string[];
+  project?: { name: string; body: string };
 };
 
 export type Dictionary = {
   meta: { title: string; description: string; ogAlt: string };
-  nav: { approach: string; career: string; company: string; contact: string; switchTo: string; skip: string };
+  ids: { main: string; approach: string; career: string; company: string; contact: string };
+  nav: { label: string; approach: string; career: string; company: string; contact: string; switchTo: string; skip: string };
   hero: {
     eyebrow: string;
     title: [string, string];
@@ -21,7 +26,7 @@ export type Dictionary = {
     facts: { value: string; label: string }[];
   };
   approach: { kicker: string; title: string; items: { title: string; body: string }[] };
-  career: { kicker: string; title: string; lead: string; items: Experience[] };
+  career: { kicker: string; title: string; lead: string; current: string; more: string; items: Experience[] };
   company: {
     kicker: string;
     title: string;
@@ -52,7 +57,9 @@ const ptBR: Dictionary = {
       "Engenheiro de software desde 2022, com passagem por ERPs, sistemas legados e microsserviços. Cofundador da L²MU, onde transformo dores reais de negócio em software e micro SaaS de nicho.",
     ogAlt: "Luiz Silva, engenheiro de software e cofundador da L²MU",
   },
+  ids: { main: "conteudo", approach: "como-trabalho", career: "trajetoria", company: "l2mu", contact: "contato" },
   nav: {
+    label: "Principal",
     approach: "Como trabalho",
     career: "Trajetória",
     company: "L²MU",
@@ -100,8 +107,22 @@ const ptBR: Dictionary = {
     kicker: "Trajetória",
     title: "Desde 2022 construindo o que empresas usam todo dia.",
     lead: "ERP, legado, microsserviços, IA e agora empresa própria. Cada etapa me deixou uma parte do que sei hoje.",
+    current: "Atual",
+    more: "Conheça a L²MU",
     items: [
       {
+        id: "flow",
+        company: "Flow",
+        role: "Desenvolvedor Sênior Full Stack",
+        period: "fev 2026 — nov 2026",
+        summary: "Plataforma de análise e tratamento de dados.",
+        highlights: [
+          "Evolução do app Flow com foco em dados, performance e segurança",
+          "CI/CD e padronização do fluxo de desenvolvimento do time",
+        ],
+      },
+      {
+        id: "l2mu",
         company: "L²MU",
         role: "Cofundador",
         period: "abr 2025 — hoje",
@@ -113,16 +134,7 @@ const ptBR: Dictionary = {
         ],
       },
       {
-        company: "Flow Analytics",
-        role: "Desenvolvedor Sênior Full Stack",
-        period: "fev 2026 — nov 2026",
-        summary: "Plataforma de análise e tratamento de dados.",
-        highlights: [
-          "Evolução do app Flow com foco em dados, performance e segurança",
-          "CI/CD e padronização do fluxo de desenvolvimento do time",
-        ],
-      },
-      {
+        id: "viasoft",
         company: "VIASOFT",
         role: "Desenvolvedor Full Stack Pleno",
         period: "dez 2024 — out 2025",
@@ -134,7 +146,8 @@ const ptBR: Dictionary = {
         ],
       },
       {
-        company: "Hábil Software by Limber",
+        id: "habil",
+        company: "Hábil",
         role: "Desenvolvedor Full Stack Pleno",
         period: "fev 2022 — nov 2024",
         summary: "ERP e SaaS em larga escala, com bastante sistema legado no caminho.",
@@ -143,6 +156,10 @@ const ptBR: Dictionary = {
           "APIs REST em Node.js e TypeScript",
           "Modernização de telas e fluxos legados em Angular",
         ],
+        project: {
+          name: "ChefHábil",
+          body: "Produto da Limber que a Hábil reconstruiu integrado ao ERP. Construí do zero.",
+        },
       },
     ],
   },
@@ -176,7 +193,7 @@ const ptBR: Dictionary = {
     copy: "Copiar e-mail",
     copied: "Copiado",
   },
-  footer: { rights: "Pato Branco, PR" },
+  footer: { rights: "Brasil" },
 };
 
 const en: Dictionary = {
@@ -186,7 +203,9 @@ const en: Dictionary = {
       "Software engineer since 2022, with experience in ERPs, legacy systems and microservices. Co-founder of L²MU, turning real business pain into custom software and niche micro SaaS.",
     ogAlt: "Luiz Silva, software engineer and co-founder of L²MU",
   },
+  ids: { main: "content", approach: "how-i-work", career: "career", company: "l2mu", contact: "contact" },
   nav: {
+    label: "Main",
     approach: "How I work",
     career: "Career",
     company: "L²MU",
@@ -234,8 +253,22 @@ const en: Dictionary = {
     kicker: "Career",
     title: "Since 2022, building what companies use every day.",
     lead: "ERP, legacy, microservices, AI and now my own company. Every step left me a piece of what I know today.",
+    current: "Current",
+    more: "Meet L²MU",
     items: [
       {
+        id: "flow",
+        company: "Flow",
+        role: "Senior Full Stack Developer",
+        period: "Feb 2026 — Nov 2026",
+        summary: "Data analysis and processing platform.",
+        highlights: [
+          "Evolved the Flow app with a focus on data, performance and security",
+          "CI/CD and a standardized development workflow for the team",
+        ],
+      },
+      {
+        id: "l2mu",
         company: "L²MU",
         role: "Co-founder",
         period: "Apr 2025 — present",
@@ -247,16 +280,7 @@ const en: Dictionary = {
         ],
       },
       {
-        company: "Flow Analytics",
-        role: "Senior Full Stack Developer",
-        period: "Feb 2026 — Nov 2026",
-        summary: "Data analysis and processing platform.",
-        highlights: [
-          "Evolved the Flow app with a focus on data, performance and security",
-          "CI/CD and a standardized development workflow for the team",
-        ],
-      },
-      {
+        id: "viasoft",
         company: "VIASOFT",
         role: "Mid-level Full Stack Developer",
         period: "Dec 2024 — Oct 2025",
@@ -268,7 +292,8 @@ const en: Dictionary = {
         ],
       },
       {
-        company: "Hábil Software by Limber",
+        id: "habil",
+        company: "Hábil",
         role: "Mid-level Full Stack Developer",
         period: "Feb 2022 — Nov 2024",
         summary: "Large-scale ERP and SaaS, with plenty of legacy along the way.",
@@ -277,6 +302,10 @@ const en: Dictionary = {
           "REST APIs with Node.js and TypeScript",
           "Modernized legacy screens and flows in Angular",
         ],
+        project: {
+          name: "ChefHábil",
+          body: "A Limber product that Hábil rebuilt with native ERP integration. I built it from scratch.",
+        },
       },
     ],
   },
@@ -310,7 +339,18 @@ const en: Dictionary = {
     copy: "Copy email",
     copied: "Copied",
   },
-  footer: { rights: "Pato Branco, Brazil" },
+  footer: { rights: "Brazil" },
 };
 
 export const dictionaries: Record<Locale, Dictionary> = { "pt-BR": ptBR, en };
+
+/** Maps a section anchor from any locale to the same section in `to` ("#trajetoria" -> "#career"). */
+export function translateHash(hash: string, to: Locale): string {
+  const id = hash.replace(/^#/, "");
+  if (!id) return "";
+  for (const dict of Object.values(dictionaries)) {
+    const key = (Object.keys(dict.ids) as (keyof Dictionary["ids"])[]).find((k) => dict.ids[k] === id);
+    if (key) return `#${dictionaries[to].ids[key]}`;
+  }
+  return "";
+}

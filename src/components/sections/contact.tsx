@@ -22,7 +22,7 @@ export function Contact({ t }: { t: Dictionary }) {
     "group flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-foreground";
 
   return (
-    <section id="contato" aria-labelledby="contact-title">
+    <section id={t.ids.contact} aria-labelledby="contact-title">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
         <SectionHeading id="contact-title" kicker={t.contact.kicker} title={t.contact.title} />
         <Reveal delay={0.08}>

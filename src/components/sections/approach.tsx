@@ -4,7 +4,7 @@ import type { Dictionary } from "@/content/i18n";
 
 export function Approach({ t }: { t: Dictionary }) {
   return (
-    <section id="como-trabalho" aria-labelledby="approach-title" className="border-t border-border">
+    <section id={t.ids.approach} aria-labelledby="approach-title" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
         <SectionHeading id="approach-title" kicker={t.approach.kicker} title={t.approach.title} />
         <ol className="mt-14 grid gap-4 sm:grid-cols-2">
