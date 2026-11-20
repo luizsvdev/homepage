@@ -2,14 +2,20 @@ import type { Locale } from "./site";
 
 export type ExperienceId = "flow" | "l2mu" | "viasoft" | "habil";
 
+export type ProductId = "habil" | "chefhabil";
+
 type Experience = {
   id: ExperienceId;
   company: string;
   role: string;
   period: string;
+  /** One line about the company itself. */
+  context?: string;
   summary: string;
-  highlights: string[];
-  project?: { name: string; body: string };
+  highlights?: string[];
+  /** Products built inside the company; `featured` gets the emphasis. */
+  products?: { id: ProductId; name: string; featured?: boolean; badge?: string; body?: string; points: string[] }[];
+  stack?: string[];
 };
 
 export type Dictionary = {
@@ -26,7 +32,7 @@ export type Dictionary = {
     facts: { value: string; label: string }[];
   };
   approach: { kicker: string; title: string; items: { title: string; body: string }[] };
-  career: { kicker: string; title: string; lead: string; current: string; more: string; items: Experience[] };
+  career: { kicker: string; title: string; lead: string; current: string; more: string; featuredLabel: string; items: Experience[] };
   company: {
     kicker: string;
     title: string;
@@ -108,6 +114,7 @@ const ptBR: Dictionary = {
     title: "Desde 2022 construindo o que empresas usam todo dia.",
     lead: "ERP, legado, microsserviços, IA e agora empresa própria. Cada etapa me deixou uma parte do que sei hoje.",
     current: "Atual",
+    featuredLabel: "Destaque",
     more: "Conheça a L²MU",
     items: [
       {
@@ -150,16 +157,33 @@ const ptBR: Dictionary = {
         company: "Hábil",
         role: "Desenvolvedor Full Stack Pleno",
         period: "fev 2022 — nov 2024",
-        summary: "ERP e SaaS em larga escala, com bastante sistema legado no caminho.",
-        highlights: [
-          "Backend em Java, Spring Boot e Hibernate para módulos de ERP",
-          "APIs REST em Node.js e TypeScript",
-          "Modernização de telas e fluxos legados em Angular",
+        context: "ERP com mais de 30 anos de mercado para micro e pequenas empresas, hoje parte do Grupo Limber.",
+        summary:
+          "Evoluí módulos críticos de vendas e integração do ERP e ajudei a construir o produto que motivou a aquisição da Hábil pelo Grupo Limber.",
+        products: [
+          {
+            id: "habil",
+            name: "Hábil Software",
+            points: [
+              "Desenvolvi a API de integração para clientes, abrindo Vendas, Compras, Estoque e Serviços aos sistemas deles, e documentei todos os endpoints",
+              "Criei uma plataforma de mensagens via WhatsApp com API própria e a integrei ao ERP para enviar boletos, notas fiscais e cobranças automaticamente",
+              "Desenvolvi o fluxo de Pedidos de Venda para um cliente estratégico, do pedido em campo à venda com NF-e",
+            ],
+          },
+          {
+            id: "chefhabil",
+            name: "Chef Hábil",
+            featured: true,
+            badge: "+8.600 estabelecimentos",
+            body: "Sistema de gestão para restaurantes integrado ao ERP. Construí do zero junto com mais dois desenvolvedores.",
+            points: [
+              "Desenvolvi o kanban de pedidos em tempo real, integrado ao iFood e ao aiqfome via webhooks e WebSocket, em produção desde a entrega sem mudanças estruturais",
+              "Criei o sincronizador com o ERP, que importa os cadastros e devolve as vendas automaticamente",
+              "Criei o Painel de Comandas, um modo do kanban para as TVs da cozinha e do balcão",
+            ],
+          },
         ],
-        project: {
-          name: "ChefHábil",
-          body: "Produto da Limber que a Hábil reconstruiu integrado ao ERP. Construí do zero.",
-        },
+        stack: ["Java", "SQL", "Angular", "Node.js", "TypeScript", "WebSocket"],
       },
     ],
   },
@@ -254,6 +278,7 @@ const en: Dictionary = {
     title: "Since 2022, building what companies use every day.",
     lead: "ERP, legacy, microservices, AI and now my own company. Every step left me a piece of what I know today.",
     current: "Current",
+    featuredLabel: "Highlight",
     more: "Meet L²MU",
     items: [
       {
@@ -296,16 +321,33 @@ const en: Dictionary = {
         company: "Hábil",
         role: "Mid-level Full Stack Developer",
         period: "Feb 2022 — Nov 2024",
-        summary: "Large-scale ERP and SaaS, with plenty of legacy along the way.",
-        highlights: [
-          "Java, Spring Boot and Hibernate backend for ERP modules",
-          "REST APIs with Node.js and TypeScript",
-          "Modernized legacy screens and flows in Angular",
+        context: "An ERP with 30+ years on the market for small businesses, now part of Grupo Limber.",
+        summary:
+          "I evolved the ERP's critical sales and integration modules and helped build the product behind Grupo Limber's acquisition of Hábil.",
+        products: [
+          {
+            id: "habil",
+            name: "Hábil Software",
+            points: [
+              "Built the customer integration API, opening Sales, Purchasing, Inventory and Services to their own systems, and documented every endpoint",
+              "Created a WhatsApp messaging platform with its own API and integrated it with the ERP to send invoices, payment slips and reminders automatically",
+              "Built the Sales Orders flow for a key client, from field order to invoiced sale",
+            ],
+          },
+          {
+            id: "chefhabil",
+            name: "Chef Hábil",
+            featured: true,
+            badge: "8,600+ venues",
+            body: "Restaurant management software integrated with the ERP. I built it from scratch alongside two other developers.",
+            points: [
+              "Built the real-time order kanban, integrated with iFood and aiqfome via webhooks and WebSocket, in production since launch with no structural changes",
+              "Created the ERP sync, which imports records and sends sales back automatically",
+              "Created the Ticket Board, a kanban mode for kitchen and counter TVs",
+            ],
+          },
         ],
-        project: {
-          name: "ChefHábil",
-          body: "A Limber product that Hábil rebuilt with native ERP integration. I built it from scratch.",
-        },
+        stack: ["Java", "SQL", "Angular", "Node.js", "TypeScript", "WebSocket"],
       },
     ],
   },

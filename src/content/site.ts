@@ -15,7 +15,17 @@ export const experienceLinks = {
   habil: "https://habil.com.br",
 } as const;
 
-export const projectLinks = { chefhabil: "https://chefhabil.com.br" } as const;
+/** Company marks shown next to the name in the career timeline. */
+export const companyIcons: Partial<Record<keyof typeof experienceLinks, string>> = {
+  habil: "/brand/companies/habil.svg",
+};
+
+/** Brand color used for small accents on that company's featured product. */
+export const companyAccents: Partial<Record<keyof typeof experienceLinks, string>> = {
+  habil: "#FF8200",
+};
+
+export const productLinks = { habil: "https://habil.com.br", chefhabil: "https://chefhabil.com.br" } as const;
 
 export const locales = ["pt-BR", "en"] as const;
 export type Locale = (typeof locales)[number];
