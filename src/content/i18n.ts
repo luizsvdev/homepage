@@ -70,7 +70,7 @@ const ptBR: Dictionary = {
   meta: {
     title: "Luiz Silva · Engenheiro de Software e cofundador da L²MU",
     description:
-      "Engenheiro de software desde 2022, com passagem por ERPs, sistemas legados e microsserviços. Cofundador da L²MU, onde transformo dores reais de negócio em software e micro SaaS de nicho.",
+      "Engenheiro de software desde 2022, com passagem por ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Cofundador da L²MU.",
     ogAlt: "Luiz Silva, engenheiro de software e cofundador da L²MU",
   },
   ids: { main: "conteudo", approach: "como-trabalho", career: "trajetoria", company: "l2mu", contact: "contato" },
@@ -86,12 +86,12 @@ const ptBR: Dictionary = {
     close: "Fechar menu",
   },
   hero: {
-    eyebrow: "Engenheiro de Software · Cofundador da L²MU",
-    title: ["Do comercial à produção,", "sem perder o problema de vista."],
+    eyebrow: "Luiz Silva · Cofundador da L²MU",
+    title: ["Oi, eu sou o Luiz.", "Engenheiro de software."],
     lead:
-      "Trabalho junto ao comercial para entender a dor do cliente antes de escrever código. Desde 2022 entrego ERPs, SaaS e plataformas usadas por milhares de empresas, e hoje faço isso como cofundador da L²MU.",
-    ctaPrimary: "Conversar no WhatsApp",
-    ctaSecondary: "Ver trajetória",
+      "Programo profissionalmente desde 2022 e sou um dos quatro sócios da L²MU. Já trabalhei com ERPs, plataformas de dados e produtos de IA, e gosto de participar do processo inteiro: da conversa com o cliente ao escopo, da entrega ao que acontece depois em produção.",
+    ctaPrimary: "Ver trajetória",
+    ctaSecondary: "Falar comigo",
     photoAlt: "Retrato de Luiz Silva",
     factsLabel: "Sistemas que ajudei a construir",
     facts: [
@@ -102,29 +102,29 @@ const ptBR: Dictionary = {
   },
   approach: {
     kicker: "Como trabalho",
-    title: "Código é a última etapa, não a primeira.",
+    title: "O que aprendi além do código.",
     items: [
       {
-        title: "Começo pela dor",
-        body: "Antes de escolher stack, sento com quem vende e com quem usa. Entender o problema de verdade evita meses construindo a coisa errada.",
+        title: "Entender antes de construir",
+        body: "Na L²MU participo da descoberta com os clientes e ajudo a transformar o problema em escopo, prazo e custo. A maior economia de um projeto é não construir a coisa errada.",
       },
       {
         title: "Arquitetura do tamanho do problema",
-        body: "Já operei microsserviços em escala e sei quando eles valem o custo. Também sei quando um monolito bem feito resolve melhor e mais barato.",
+        body: "Participei da migração de um monólito para mais de 19 microsserviços e sei o custo que isso tem. Por isso também sei quando um monólito bem feito resolve melhor.",
       },
       {
-        title: "Sistemas que aguentam o tempo",
-        body: "ERPs e legados me ensinaram que o software passa mais tempo sendo mantido do que sendo escrito. Escrevo pensando em quem vem depois.",
+        title: "O time entrega, não só eu",
+        body: "Na Flow criei o painel que tirou o time de dentro do banco, simplifiquei o deploy e coloquei o QA para testar cada PR. Processo bom faz todo mundo andar mais rápido.",
       },
       {
-        title: "Dono do resultado",
-        body: "Do primeiro levantamento ao suporte em produção. Se o cliente não sentiu a melhora, o trabalho não terminou.",
+        title: "Software vive mais em produção",
+        body: "Trabalhar em um ERP com mais de 30 anos me ensinou que sistema é mais mantido do que escrito. O kanban do Chef Hábil segue em produção desde a entrega, sem mudanças estruturais.",
       },
     ],
   },
   career: {
     kicker: "Trajetória",
-    title: "Desde 2022 construindo o que empresas usam todo dia.",
+    title: "Onde trabalhei e o que entreguei.",
     lead: "Do ERP de pequenas empresas a plataformas usadas por milhares delas, e agora com empresa própria.",
     current: "Atual",
     featuredLabel: "Destaque",
@@ -271,20 +271,20 @@ const ptBR: Dictionary = {
     ],
   },
   company: {
-    kicker: "A empresa",
+    kicker: "Minha empresa",
     title: "L²MU",
     body: [
       "A L²MU começou com uma ideia minha e virou empresa porque três engenheiros que eu admiro toparam construir junto. Hoje somos quatro sócios, todos com a mão no código.",
-      "Fazemos software sob medida e apostamos em micro SaaS de nicho: produtos pequenos e afiados, feitos para um problema específico de um mercado específico.",
+      "Ser sócio me colocou do outro lado da mesa: além de construir, preciso entender quanto custa, quanto tempo leva e se vale a pena para quem está pagando.",
     ],
     role: "Cofundador",
     since: "desde abril de 2025",
     pillars: [
-      { title: "Sob medida", body: "Sistemas web, mobile e APIs para a operação do cliente." },
-      { title: "Micro SaaS", body: "Produtos próprios para nichos que os grandes ignoram." },
-      { title: "Sem intermediários", body: "Quem conversa com você é quem escreve o código." },
+      { title: "Arquitetura", body: "Desenho a arquitetura da maioria dos projetos e acompanho até a produção." },
+      { title: "Descoberta", body: "Converso com os clientes para entender o problema antes de definir a solução." },
+      { title: "Produto próprio", body: "Além de projetos sob medida, mantemos produtos nossos, como o JurisController." },
     ],
-    cta: "Conhecer a L²MU",
+    cta: "Site da L²MU",
   },
   stack: {
     kicker: "Ferramentas que uso",
@@ -292,8 +292,8 @@ const ptBR: Dictionary = {
   },
   contact: {
     kicker: "Contato",
-    title: "Tem um problema que software pode resolver?",
-    lead: "Conte o contexto. Se eu puder ajudar, ou se a L²MU for o caminho, respondo com uma proposta clara.",
+    title: "Vamos conversar.",
+    lead: "Seja sobre uma vaga, um projeto ou só para trocar uma ideia, pode me chamar.",
     whatsapp: "WhatsApp",
     whatsappMessage: "Olá, Luiz! Vim pelo seu portfólio.",
     email: "E-mail",
@@ -307,7 +307,7 @@ const en: Dictionary = {
   meta: {
     title: "Luiz Silva · Software Engineer and co-founder of L²MU",
     description:
-      "Software engineer since 2022, with experience in ERPs, legacy systems and microservices. Co-founder of L²MU, turning real business pain into custom software and niche micro SaaS.",
+      "Software engineer since 2022, with experience in ERPs, data platforms and AI products used by thousands of companies. Co-founder of L²MU.",
     ogAlt: "Luiz Silva, software engineer and co-founder of L²MU",
   },
   ids: { main: "content", approach: "how-i-work", career: "career", company: "l2mu", contact: "contact" },
@@ -323,12 +323,12 @@ const en: Dictionary = {
     close: "Close menu",
   },
   hero: {
-    eyebrow: "Software Engineer · Co-founder of L²MU",
-    title: ["From sales call to production,", "without losing sight of the problem."],
+    eyebrow: "Luiz Silva · Co-founder of L²MU",
+    title: ["Hi, I'm Luiz.", "Software engineer."],
     lead:
-      "I work alongside sales to understand the client's pain before writing any code. Since 2022 I've shipped ERPs, SaaS and platforms used by thousands of businesses, and today I do it as co-founder of L²MU.",
-    ctaPrimary: "Message me on WhatsApp",
-    ctaSecondary: "See my career",
+      "I've been coding professionally since 2022 and I'm one of the four partners at L²MU. I've worked on ERPs, data platforms and AI products, and I like being part of the whole process: from talking to the client and shaping the scope to shipping and what happens next in production.",
+    ctaPrimary: "See my career",
+    ctaSecondary: "Get in touch",
     photoAlt: "Portrait of Luiz Silva",
     factsLabel: "Systems I helped build",
     facts: [
@@ -339,29 +339,29 @@ const en: Dictionary = {
   },
   approach: {
     kicker: "How I work",
-    title: "Code is the last step, not the first.",
+    title: "What I learned beyond the code.",
     items: [
       {
-        title: "Start with the pain",
-        body: "Before picking a stack, I sit down with the people who sell and the people who use it. Understanding the real problem saves months of building the wrong thing.",
+        title: "Understand before building",
+        body: "At L²MU I take part in discovery with clients and help turn the problem into scope, timeline and cost. The biggest saving in any project is not building the wrong thing.",
       },
       {
         title: "Architecture sized to the problem",
-        body: "I've run microservices at scale and know when they're worth the cost. I also know when a well-built monolith solves it better and cheaper.",
+        body: "I took part in moving a monolith to 19+ microservices and know what that costs. That's also how I know when a well-built monolith is the better answer.",
       },
       {
-        title: "Systems that age well",
-        body: "ERPs and legacy code taught me software spends more time being maintained than written. I write for whoever comes next.",
+        title: "The team ships, not just me",
+        body: "At Flow I built the panel that got the team out of the database, simplified deploys and had QA test every PR. Good process makes everyone faster.",
       },
       {
-        title: "Owning the outcome",
-        body: "From the first discovery call to production support. If the client didn't feel the improvement, the work isn't done.",
+        title: "Software lives longer in production",
+        body: "Working on a 30-year-old ERP taught me systems are maintained far more than they're written. The Chef Hábil kanban has run in production since launch with no structural changes.",
       },
     ],
   },
   career: {
     kicker: "Career",
-    title: "Since 2022, building what companies use every day.",
+    title: "Where I've worked and what I shipped.",
     lead: "From ERPs for small businesses to platforms used by thousands of them, and now my own company.",
     current: "Current",
     featuredLabel: "Highlight",
@@ -508,20 +508,20 @@ const en: Dictionary = {
     ],
   },
   company: {
-    kicker: "The company",
+    kicker: "My company",
     title: "L²MU",
     body: [
       "L²MU started as an idea of mine and became a company because three engineers I admire agreed to build it together. Today we're four partners, all hands-on with the code.",
-      "We build custom software and bet on niche micro SaaS: small, sharp products made for one specific problem in one specific market.",
+      "Being a partner put me on the other side of the table: besides building, I need to understand what it costs, how long it takes and whether it's worth it for whoever is paying.",
     ],
     role: "Co-founder",
     since: "since April 2025",
     pillars: [
-      { title: "Custom", body: "Web, mobile and API systems for the client's operation." },
-      { title: "Micro SaaS", body: "Our own products for niches the big players ignore." },
-      { title: "No middlemen", body: "The people you talk to are the people writing the code." },
+      { title: "Architecture", body: "I design the architecture of most projects and follow them into production." },
+      { title: "Discovery", body: "I talk to clients to understand the problem before settling on a solution." },
+      { title: "Own products", body: "Besides custom projects, we run products of our own, like JurisController." },
     ],
-    cta: "Visit L²MU",
+    cta: "L²MU website",
   },
   stack: {
     kicker: "Tools I use",
@@ -529,8 +529,8 @@ const en: Dictionary = {
   },
   contact: {
     kicker: "Contact",
-    title: "Got a problem software can solve?",
-    lead: "Tell me the context. If I can help, or if L²MU is the right fit, I'll reply with a clear proposal.",
+    title: "Let's talk.",
+    lead: "Whether it's about a role, a project or just swapping ideas, feel free to reach out.",
     whatsapp: "WhatsApp",
     whatsappMessage: "Hi Luiz! I found you through your portfolio.",
     email: "Email",

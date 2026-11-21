@@ -1,9 +1,8 @@
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 import { Reveal } from "@/components/reveal";
 import { BorderBeam } from "@/components/ui/border-beam";
 import type { Dictionary } from "@/content/i18n";
-import { whatsappUrl } from "@/content/site";
 
 export function Hero({ t }: { t: Dictionary }) {
   return (
@@ -22,20 +21,17 @@ export function Hero({ t }: { t: Dictionary }) {
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-pretty text-muted">{t.hero.lead}</p>
           <div className="mt-10 flex flex-wrap gap-3">
               <a
-                href={whatsappUrl(t.contact.whatsappMessage)}
-                target="_blank"
-                rel="noopener"
+                href={`#${t.ids.career}`}
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
               >
                 {t.hero.ctaPrimary}
-                <ArrowUpRight aria-hidden="true" className="size-4" />
+                <ArrowDown aria-hidden="true" className="size-4" />
               </a>
               <a
-                href={`#${t.ids.career}`}
+                href={`#${t.ids.contact}`}
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
               >
                 {t.hero.ctaSecondary}
-                <ArrowDown aria-hidden="true" className="size-4" />
               </a>
           </div>
         </div>
