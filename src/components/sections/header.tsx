@@ -37,7 +37,17 @@ export function Header({ t, locale }: { t: Dictionary; locale: Locale }) {
         {t.nav.skip}
       </a>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
-        <a href={localePath[locale]} className="font-serif text-2xl leading-none tracking-tight">
+        <a
+          href={localePath[locale]}
+          onClick={(e) => {
+            // Same page: scroll to the top instead of reloading it.
+            e.preventDefault();
+            setOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            if (window.location.hash) history.replaceState(null, "", window.location.pathname);
+          }}
+          className="font-serif text-2xl leading-none tracking-tight"
+        >
           Luiz Silva
         </a>
         <nav aria-label={t.nav.label} className="flex items-center gap-1 text-sm">
