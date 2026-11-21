@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luizsv.dev/sitemap.xml
+Sitemap: https://www.luizsv.dev/sitemap.xml

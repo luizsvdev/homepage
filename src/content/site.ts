@@ -1,7 +1,7 @@
 import type { ProductId } from "./i18n";
 
 export const site = {
-  url: "https://luizsv.dev",
+  url: "https://www.luizsv.dev",
   name: "Luiz Silva",
   email: "luizsv.dev@gmail.com",
   github: "https://github.com/luizsvdev",

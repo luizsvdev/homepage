@@ -43,7 +43,7 @@ for (const locale of locales) {
   console.log(`prerendered ${localePath[locale]} -> ${path.relative(root, out)}`);
 }
 
-const site = "https://luizsv.dev";
+const site = "https://www.luizsv.dev";
 const href = (l) => site + (localePath[l] === "/" ? "/" : localePath[l]);
 const alternates = locales
   .map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${href(l)}"/>`)

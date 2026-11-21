@@ -29,7 +29,7 @@ for (const [locale, [role, company]] of Object.entries(og)) {
     <text x="76" y="330" font-family="DejaVu Sans, Arial, sans-serif" font-size="36" fill="#9c998f">${esc(role)}</text>
     <rect x="76" y="380" width="14" height="14" rx="3" fill="#c8ff00"/>
     <text x="104" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="28" fill="#ecebe6">${esc(company)}</text>
-    <text x="76" y="560" font-family="DejaVu Sans Mono, monospace" font-size="26" fill="#5f5c55">luizsv.dev</text>
+    <text x="76" y="560" font-family="DejaVu Sans Mono, monospace" font-size="26" fill="#5f5c55">www.luizsv.dev</text>
   </svg>`;
   const photo = await sharp(src).resize(630, 630).toBuffer();
   const fade = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="630" height="630">
