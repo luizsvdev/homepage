@@ -226,6 +226,32 @@ function FeaturedCard({ job, t }: { job: Job; t: Dictionary }) {
         <div className="text-white/90">
           <Highlights items={job.highlights ?? []} featured />
         </div>
+        {job.products?.map((product) => (
+          <section
+            key={product.id}
+            aria-label={product.name}
+            className="mt-8 rounded-2xl border border-l2mu-primary/30 bg-white/[0.04] p-5 sm:p-6"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-white/60 uppercase">
+                  <span aria-hidden="true" className="size-1.5 rounded-full bg-l2mu-primary" />
+                  {t.career.featuredLabel}
+                </span>
+                <h4 className="text-xl font-semibold">
+                  <ProductLink product={product} className="hover:text-l2mu-primary" />
+                </h4>
+              </div>
+              {product.badge && (
+                <span className="rounded-full border border-l2mu-primary/40 px-3 py-1 font-mono text-xs text-l2mu-primary">
+                  {product.badge}
+                </span>
+              )}
+            </div>
+            {product.body && <p className="mt-3 text-pretty text-white/75">{product.body}</p>}
+            {product.points.length > 0 && <Highlights items={product.points} featured />}
+          </section>
+        ))}
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href={`#${t.ids.company}`}

@@ -2,7 +2,7 @@ import type { Locale } from "./site";
 
 export type ExperienceId = "flow" | "l2mu" | "viasoft" | "habil";
 
-export type ProductId = "habil" | "chefhabil" | "viahelper" | "radar" | "flow-data" | "flow-permissions" | "flow-team";
+export type ProductId = "habil" | "chefhabil" | "viahelper" | "radar" | "flow-data" | "flow-permissions" | "flow-team" | "juriscontroller";
 
 type Experience = {
   id: ExperienceId;
@@ -174,13 +174,24 @@ const ptBR: Dictionary = {
       {
         id: "l2mu",
         company: "L²MU",
-        role: "Cofundador",
+        role: "Cofundador · Engenheiro de Software",
         period: "abr 2025 — hoje",
-        summary: "Software sob medida e micro SaaS para nichos específicos.",
+        summary:
+          "Software house de quatro engenheiros: construímos sistemas sob medida para clientes e operamos nossos próprios produtos para nichos específicos.",
         highlights: [
-          "Levantamento junto ao comercial e aos clientes para transformar dor em escopo",
-          "Decisões de produto, arquitetura e prioridade de ponta a ponta",
-          "Construção e operação dos sistemas em produção",
+          "Desenho a arquitetura da maioria dos projetos e acompanho a construção até a entrega em produção",
+          "Participo da descoberta com os clientes para transformar a dor do negócio em escopo, prazo e custo",
+          "Entregamos projetos sob medida para clientes, da evolução de sistemas existentes a novos produtos web",
+        ],
+        products: [
+          {
+            id: "juriscontroller",
+            name: "JurisController",
+            featured: true,
+            badge: "Produto próprio",
+            body: "Sistema web de gestão para pequenos escritórios de advocacia, que reúne prazos, intimações do DJEN, processos e financeiro em um só lugar. Criado, mantido e operado por nós.",
+            points: [],
+          },
         ],
       },
       {
@@ -398,13 +409,24 @@ const en: Dictionary = {
       {
         id: "l2mu",
         company: "L²MU",
-        role: "Co-founder",
+        role: "Co-founder · Software Engineer",
         period: "Apr 2025 — present",
-        summary: "Custom software and micro SaaS for specific niches.",
+        summary:
+          "A software house of four engineers: we build custom systems for clients and run our own products for specific niches.",
         highlights: [
-          "Discovery with sales and clients to turn pain into scope",
-          "End-to-end product, architecture and priority decisions",
-          "Building and running the systems in production",
+          "I design the architecture of most projects and stay with the build until it runs in production",
+          "I take part in discovery with clients to turn business pain into scope, timeline and cost",
+          "We deliver custom projects for clients, from evolving existing systems to building new web products",
+        ],
+        products: [
+          {
+            id: "juriscontroller",
+            name: "JurisController",
+            featured: true,
+            badge: "Our own product",
+            body: "A web-based management system for small law firms, bringing deadlines, DJEN court notices, cases and finance together in one place. Built, maintained and run by us.",
+            points: [],
+          },
         ],
       },
       {

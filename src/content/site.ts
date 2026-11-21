@@ -35,6 +35,7 @@ export const productLinks: Partial<Record<ProductId, string>> = {
   habil: "https://habil.com.br",
   chefhabil: "https://chefhabil.com.br",
   viahelper: "https://app.viahelper.com.br",
+  juriscontroller: "https://www.juriscontroller.com.br",
 };
 
 export const locales = ["pt-BR", "en"] as const;
