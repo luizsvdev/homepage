@@ -19,16 +19,6 @@
   --color-l2mu-accent: #2a2a2a;
 }
 
-/* `inline` so var(--duration) resolves on the marquee element, not on :root. */
-@theme inline {
-  --animate-marquee: marquee var(--duration) infinite linear;
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - var(--gap))); }
-  }
-}
-
 :root {
   color-scheme: light dark;
   --bg: #f6f5f1;

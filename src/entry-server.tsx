@@ -38,6 +38,7 @@ export function head(locale: Locale) {
         email: `mailto:${site.email}`,
         telephone: `+${site.whatsapp}`,
         address: { "@type": "PostalAddress", addressCountry: site.country },
+        sameAs: [site.github],
         worksFor: { "@id": `${site.company.url}/#organization` },
         knowsAbout: [
           "Software Engineering",

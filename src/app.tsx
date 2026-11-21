@@ -6,7 +6,6 @@ import { Company } from "@/components/sections/company";
 import { Contact } from "@/components/sections/contact";
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
-import { Stack } from "@/components/sections/stack";
 import { dictionaries } from "@/content/i18n";
 import { site, type Locale } from "@/content/site";
 
@@ -21,7 +20,6 @@ export function App({ locale }: { locale: Locale }) {
         <Company t={t} />
         <Career t={t} />
         <Approach t={t} />
-        <Stack t={t} />
         <Contact t={t} />
       </main>
       <footer className="border-t border-border">
@@ -29,7 +27,10 @@ export function App({ locale }: { locale: Locale }) {
           <p>
             © {new Date().getFullYear()} {site.name} · {t.footer.rights}
           </p>
-          <p>
+          <p className="flex gap-4">
+            <a href={site.github} target="_blank" rel="noopener me" className="hover:text-foreground">
+              GitHub
+            </a>
             <a href={site.company.url} target="_blank" rel="noopener" className="hover:text-foreground">
               {site.company.name}
             </a>

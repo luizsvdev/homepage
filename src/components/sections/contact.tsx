@@ -22,14 +22,22 @@ export function Contact({ t }: { t: Dictionary }) {
     "group flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-foreground";
 
   return (
-    <section id={t.ids.contact} aria-labelledby="contact-title">
-      <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32">
-        <SectionHeading id="contact-title" kicker={t.contact.kicker} title={t.contact.title} />
+    <section aria-labelledby="contact-title">
+      <div className="mx-auto max-w-6xl px-4 pt-4 pb-24 sm:px-6 md:pt-8 md:pb-32">
+        <SectionHeading id="contact-title" kicker={t.contact.team.kicker} title={t.contact.team.title} />
         <Reveal delay={0.08}>
-          <p className="mt-6 max-w-xl text-lg text-pretty text-muted">{t.contact.lead}</p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-muted">{t.contact.team.body}</p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 [&>*]:min-w-0">
+        <Reveal delay={0.12}>
+          <div id={t.ids.contact} className="mt-16 border-t border-border pt-12">
+            <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">{t.contact.kicker}</p>
+            <h3 className="mt-4 max-w-2xl font-serif text-3xl leading-[1.1] text-balance sm:text-4xl">{t.contact.title}</h3>
+            <p className="mt-4 max-w-xl text-pretty text-muted">{t.contact.lead}</p>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2 [&>*]:min-w-0">
           <Reveal delay={0.12}>
             <a href={whatsappUrl(t.contact.whatsappMessage)} target="_blank" rel="noopener" className={card}>
               <span className="flex items-center gap-4">

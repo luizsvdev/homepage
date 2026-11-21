@@ -4,6 +4,7 @@ export const site = {
   url: "https://luizsv.dev",
   name: "Luiz Silva",
   email: "luizsv.dev@gmail.com",
+  github: "https://github.com/luizsvdev",
   whatsapp: "5546991177172",
   whatsappDisplay: "+55 46 99117-7172",
   country: "BR",

@@ -54,8 +54,8 @@ export type Dictionary = {
     pillars: { title: string; body: string }[];
     cta: string;
   };
-  stack: { kicker: string; note: string };
   contact: {
+    team: { kicker: string; title: string; body: string };
     kicker: string;
     title: string;
     lead: string;
@@ -102,7 +102,7 @@ const ptBR: Dictionary = {
       { title: "Sistemas críticos", body: "Segurança, dados e integrações em plataformas com milhares de empresas." },
       {
         title: "Negócio e engenharia",
-        body: "Do levantamento com o cliente à coordenação de fornecedores, com prazo e custo na mesa.",
+        body: "Do entendimento do problema à coordenação de fornecedores, com prazo e custo na mesa.",
       },
     ],
   },
@@ -112,7 +112,7 @@ const ptBR: Dictionary = {
     items: [
       {
         title: "Entender antes de construir",
-        body: "Participo da descoberta com o cliente e transformo o problema em escopo, prazo e custo. Evitar construir a coisa errada é a maior economia de um projeto.",
+        body: "Antes do código, entendo a dor de quem vai usar o sistema e o impacto dela no negócio. A solução certa equilibra a melhor experiência para o usuário com o melhor custo para a empresa.",
       },
       {
         title: "Arquitetura do tamanho do problema",
@@ -120,7 +120,7 @@ const ptBR: Dictionary = {
       },
       {
         title: "Processo que acelera o time",
-        body: "Deploy em segundos, ambiente de QA para cada PR e ferramentas internas que tiram a operação de dentro do banco. Entrega rápida depende de processo, não de esforço heroico.",
+        body: "Deploy em segundos, ambiente de QA para cada PR e ferramentas internas que dão autonomia às outras áreas. Entrega rápida depende de processo, não de esforço heroico.",
       },
       {
         title: "Feito para durar em produção",
@@ -292,14 +292,15 @@ const ptBR: Dictionary = {
     ],
     cta: "Conhecer a L²MU",
   },
-  stack: {
-    kicker: "Ferramentas que uso",
-    note: "A escolha vem depois do problema.",
-  },
   contact: {
+    team: {
+      kicker: "Em equipe",
+      title: "Dois fazem mais do que um.",
+      body: "Levo um sistema de ponta a ponta, mas os melhores resultados que entreguei vieram de times. A L²MU é o exemplo mais claro: uma ideia que, no dia seguinte, já era um time de quatro sócios. Em cada projeto, busco somar ao que o time já tem e cobrir o que falta.",
+    },
     kicker: "Contato",
     title: "Uma vaga, um projeto ou um problema para resolver?",
-    lead: "Respondo pessoalmente. Para oportunidades, envie o contexto da vaga. Para projetos, conte o problema e eu indico o melhor caminho, inclusive se faz sentido conduzirmos pela L²MU.",
+    lead: "Respondo pessoalmente. Para oportunidades, envie o contexto da vaga. Para projetos, conte o problema e eu indico o melhor caminho.",
     whatsapp: "WhatsApp",
     whatsappMessage: "Olá, Luiz! Vim pelo seu portfólio.",
     email: "E-mail",
@@ -343,7 +344,7 @@ const en: Dictionary = {
       { title: "Critical systems", body: "Security, data and integrations on platforms serving thousands of companies." },
       {
         title: "Business and engineering",
-        body: "From client discovery to managing vendors, with timeline and cost on the table.",
+        body: "From understanding the problem to managing vendors, with timeline and cost on the table.",
       },
     ],
   },
@@ -353,7 +354,7 @@ const en: Dictionary = {
     items: [
       {
         title: "Understand before building",
-        body: "I take part in discovery with the client and turn the problem into scope, timeline and cost. Not building the wrong thing is the biggest saving in any project.",
+        body: "Before any code, I understand the pain of whoever will use the system and its impact on the business. The right solution balances the best experience for the user with the best cost for the company.",
       },
       {
         title: "Architecture sized to the problem",
@@ -361,7 +362,7 @@ const en: Dictionary = {
       },
       {
         title: "Process that speeds up the team",
-        body: "Deploys in seconds, a QA environment for every PR and internal tools that take operations out of the database. Fast delivery comes from process, not heroics.",
+        body: "Deploys in seconds, a QA environment for every PR and internal tools that give other teams autonomy. Fast delivery comes from process, not heroics.",
       },
       {
         title: "Built to last in production",
@@ -533,14 +534,15 @@ const en: Dictionary = {
     ],
     cta: "Visit L²MU",
   },
-  stack: {
-    kicker: "Tools I use",
-    note: "The choice comes after the problem.",
-  },
   contact: {
+    team: {
+      kicker: "As a team",
+      title: "Two achieve more than one.",
+      body: "I can take a system end to end, but my best results came from teams. L²MU is the clearest example: an idea that, the next day, was already a team of four partners. On every project, I look to add to what the team already has and cover what is missing.",
+    },
     kicker: "Contact",
     title: "A role, a project or a problem to solve?",
-    lead: "I reply personally. For opportunities, send the context of the role. For projects, describe the problem and I'll point to the best path, including whether L²MU should take it on.",
+    lead: "I reply personally. For opportunities, send the context of the role. For projects, describe the problem and I'll point to the best path.",
     whatsapp: "WhatsApp",
     whatsappMessage: "Hi Luiz! I found you through your portfolio.",
     email: "Email",
