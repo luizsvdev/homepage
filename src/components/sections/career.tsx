@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 import { Reveal, SectionHeading } from "@/components/reveal";
@@ -42,6 +43,7 @@ type Product = NonNullable<Job["products"]>[number];
 
 function ProductLink({ product, className }: { product: Product; className?: string }) {
   const url = productLinks[product.id];
+  if (!url) return <span className={className}>{product.name}</span>;
   return (
     <a href={url} target="_blank" rel="noopener" className={cn("group inline-flex items-center gap-1.5 hover:underline", className)}>
       {product.name}
@@ -50,7 +52,6 @@ function ProductLink({ product, className }: { product: Product; className?: str
   );
 }
 
-/** The product that matters most: inverted colors and a slow border beam. */
 /**
  * The product that matters most. Same neutral surface in both themes; the
  * emphasis comes from a stronger border, a faint brand tint and a slow beam.
@@ -92,14 +93,49 @@ function FeaturedProduct({ product, label, accent }: { product: Product; label: 
   );
 }
 
-function Product({ product }: { product: Product }) {
+/** Small "L²MU" chip whose tooltip explains the work was delivered by L²MU. */
+function L2muHint({ text }: { text: string }) {
+  const id = useId();
   return (
-    <section aria-label={product.name} className="rounded-2xl border border-border bg-surface p-6 sm:p-7">
-      <h4 className="text-lg font-medium">
-        <ProductLink product={product} />
-      </h4>
+    <span className="group/hint relative inline-flex shrink-0">
+      <button
+        type="button"
+        aria-describedby={id}
+        className="inline-flex items-center gap-1.5 rounded-full bg-l2mu-bg px-2.5 py-1 font-brand text-[11px] font-semibold text-l2mu-primary"
+      >
+        <span aria-hidden="true" className="size-1.5 rounded-full bg-l2mu-primary" />
+        L²MU
+      </button>
+      <span
+        role="tooltip"
+        id={id}
+        className="pointer-events-none absolute right-0 bottom-full z-20 mb-2 w-60 translate-y-1 rounded-lg bg-l2mu-bg px-3 py-2 text-xs leading-relaxed text-white/90 opacity-0 shadow-lg transition-all group-hover/hint:translate-y-0 group-hover/hint:opacity-100 group-focus-within/hint:translate-y-0 group-focus-within/hint:opacity-100"
+      >
+        {text}
+      </span>
+    </span>
+  );
+}
+
+function Product({ product, t }: { product: Product; t: Dictionary }) {
+  return (
+    <section
+      aria-label={product.name}
+      className={cn(
+        "relative rounded-2xl border bg-surface p-6 sm:p-7",
+        product.viaL2mu
+          ? "border-l2mu-primary/60 shadow-[0_0_28px_-10px_rgba(200,255,0,0.55)]"
+          : "border-border",
+      )}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <h4 className="text-lg font-medium">
+          <ProductLink product={product} />
+        </h4>
+        {product.viaL2mu && <L2muHint text={t.career.viaL2mu} />}
+      </div>
       {product.body && <p className="mt-2 text-pretty text-muted">{product.body}</p>}
-      <Highlights items={product.points} />
+      <Highlights items={product.points} featured={product.viaL2mu} />
     </section>
   );
 }
@@ -118,7 +154,7 @@ function JobCard({ job, t }: { job: Job; t: Dictionary }) {
         <div className={cn("flex flex-wrap justify-between gap-x-4 gap-y-1", icon ? "items-center" : "items-baseline")}>
           <h3 className="text-2xl font-medium tracking-tight">
             <a href={url} target="_blank" rel="noopener" className="group inline-flex items-center gap-3">
-              {icon && <img src={icon} alt="" width={40} height={40} className="size-10 rounded-[8px] shadow-sm" />}
+              {icon && <img src={icon} alt="" width={40} height={40} className="size-10 rounded-[8px] shadow-sm ring-1 ring-foreground/10" />}
               <span className="group-hover:underline">{job.company}</span>
               <ArrowUpRight aria-hidden="true" className="-ml-1.5 size-4 text-muted transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
@@ -141,7 +177,7 @@ function JobCard({ job, t }: { job: Job; t: Dictionary }) {
                   accent={companyAccents[job.id] ?? "var(--fg)"}
                 />
               ) : (
-                <Product key={product.id} product={product} />
+                <Product key={product.id} product={product} t={t} />
               ),
             )}
           </div>

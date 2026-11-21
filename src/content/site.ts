@@ -1,3 +1,5 @@
+import type { ProductId } from "./i18n";
+
 export const site = {
   url: "https://luizsv.dev",
   name: "Luiz Silva",
@@ -18,14 +20,22 @@ export const experienceLinks = {
 /** Company marks shown next to the name in the career timeline. */
 export const companyIcons: Partial<Record<keyof typeof experienceLinks, string>> = {
   habil: "/brand/companies/habil.svg",
+  viasoft: "/brand/companies/viasoft.svg",
+  flow: "/brand/companies/flow.svg",
 };
 
 /** Brand color used for small accents on that company's featured product. */
 export const companyAccents: Partial<Record<keyof typeof experienceLinks, string>> = {
   habil: "#FF8200",
+  viasoft: "#ED1B24",
+  flow: "#165EEF",
 };
 
-export const productLinks = { habil: "https://habil.com.br", chefhabil: "https://chefhabil.com.br" } as const;
+export const productLinks: Partial<Record<ProductId, string>> = {
+  habil: "https://habil.com.br",
+  chefhabil: "https://chefhabil.com.br",
+  viahelper: "https://app.viahelper.com.br",
+};
 
 export const locales = ["pt-BR", "en"] as const;
 export type Locale = (typeof locales)[number];

@@ -2,7 +2,7 @@ import type { Locale } from "./site";
 
 export type ExperienceId = "flow" | "l2mu" | "viasoft" | "habil";
 
-export type ProductId = "habil" | "chefhabil";
+export type ProductId = "habil" | "chefhabil" | "viahelper" | "radar" | "flow-data" | "flow-permissions" | "flow-team";
 
 type Experience = {
   id: ExperienceId;
@@ -14,7 +14,16 @@ type Experience = {
   summary: string;
   highlights?: string[];
   /** Products built inside the company; `featured` gets the emphasis. */
-  products?: { id: ProductId; name: string; featured?: boolean; badge?: string; body?: string; points: string[] }[];
+  products?: {
+    id: ProductId;
+    name: string;
+    featured?: boolean;
+    /** Delivered by L²MU under a contract with this company. */
+    viaL2mu?: boolean;
+    badge?: string;
+    body?: string;
+    points: string[];
+  }[];
   stack?: string[];
 };
 
@@ -32,7 +41,7 @@ export type Dictionary = {
     facts: { value: string; label: string }[];
   };
   approach: { kicker: string; title: string; items: { title: string; body: string }[] };
-  career: { kicker: string; title: string; lead: string; current: string; more: string; featuredLabel: string; items: Experience[] };
+  career: { kicker: string; title: string; lead: string; current: string; more: string; featuredLabel: string; viaL2mu: string; items: Experience[] };
   company: {
     kicker: string;
     title: string;
@@ -115,18 +124,52 @@ const ptBR: Dictionary = {
     lead: "ERP, legado, microsserviços, IA e agora empresa própria. Cada etapa me deixou uma parte do que sei hoje.",
     current: "Atual",
     featuredLabel: "Destaque",
+    viaL2mu: "Entregue pela L²MU, contratada pela Flow para este projeto.",
     more: "Conheça a L²MU",
     items: [
       {
         id: "flow",
         company: "Flow",
-        role: "Desenvolvedor Sênior Full Stack",
+        role: "Engenheiro de Software Sênior",
         period: "fev 2026 — nov 2026",
-        summary: "Plataforma de análise e tratamento de dados.",
-        highlights: [
-          "Evolução do app Flow com foco em dados, performance e segurança",
-          "CI/CD e padronização do fluxo de desenvolvimento do time",
+        context:
+          "Plataforma de análise e gestão comercial usada por mais de 1.000 empresas, alimentada pelos dados do ERP de cada cliente. Entrei como o desenvolvedor mais experiente de um time enxuto.",
+        summary:
+          "Fortaleci a base de um sistema feito de dados: isolamento entre clientes, conexões com o banco, estrutura multitenant e o fluxo de entregas do time.",
+        products: [
+          {
+            id: "flow-data",
+            name: "Segurança e base de dados",
+            featured: true,
+            badge: "+1.000 empresas",
+            points: [
+              "Identifiquei e corrigi na primeira semana uma falha crítica de isolamento entre clientes na autenticação, reestruturando o controle de acesso com JWT",
+              "Implementei pool de conexões por banco de cliente, com guard baseado no JWT e validação contra vazamento de conexão entre usuários. Antes, cada requisição abria uma conexão do zero",
+              "Iniciei a reorganização da estrutura multitenant, levando para o schema de cada cliente os dados que estavam no schema administrativo",
+            ],
+          },
+          {
+            id: "flow-permissions",
+            name: "Permissões por empresa",
+            viaL2mu: true,
+            body: "Demanda de clientes estratégicos: usuários com acesso a várias empresas precisavam de permissões diferentes em cada uma.",
+            points: [
+              "Refatoramos as permissões para o schema de cada empresa, com escopo de visualização por gerente, supervisor e vendedor",
+              "Fizemos a migração de forma gradual, com uma flag por empresa que reativa o modelo legado em caso de problema",
+            ],
+          },
+          {
+            id: "flow-team",
+            name: "Fluxo de entregas",
+            points: [
+              "Criei o painel administrativo da equipe para cadastrar clientes, usuários, grupos de acesso, relatórios e módulos. Antes, tudo era feito direto no banco e dependia de um desenvolvedor",
+              "Criei um migrador de bases automatizado para acelerar as entregas",
+              "Simplifiquei o fluxo Git: merge na main publica em homologação e tag versionada publica em produção, com deploy em segundos e rollback simples",
+              "Criei um script que sobe o projeto com Docker na máquina do QA, para testar cada PR antes da aprovação",
+            ],
+          },
         ],
+        stack: ["Python", "React", "Vite", "JWT", "Docker"],
       },
       {
         id: "l2mu",
@@ -143,14 +186,40 @@ const ptBR: Dictionary = {
       {
         id: "viasoft",
         company: "VIASOFT",
-        role: "Desenvolvedor Full Stack Pleno",
+        role: "Engenheiro de Software · P&D",
         period: "dez 2024 — out 2025",
-        summary: "IA aplicada à gestão empresarial dentro de um ecossistema de ERP.",
-        highlights: [
-          "Desenvolvimento do VIAHELPER, plataforma de IA para gestão",
-          "Arquitetura e implementação do Radar Diário, sistema de alertas proativos",
-          "Integrações entre ERPs e serviços internos em arquitetura de microsserviços",
+        context:
+          "Grupo de ERPs especialistas por segmento, no mercado desde 1990, com cerca de 700 colaboradores. Atuei no P&D, time de inovação e modernização de produtos.",
+        summary:
+          "Ajudei a levar o VIAHELPER do MVP a um produto usado por mais de 120 empresas, uma delas com mais de 3 mil lojas, e arquitetei sua funcionalidade mais estratégica.",
+        products: [
+          {
+            id: "viahelper",
+            name: "VIAHELPER",
+            body: "Plataforma de IA para empresas: assistentes por setor, alimentados pelos dados do ERP do cliente via API.",
+            points: [
+              "Participei da concepção do MVP e da identidade visual do produto, junto ao time de design",
+              "Integrei múltiplos provedores de IA (OpenAI, Gemini, Claude, Groq e LiteLLM), abrindo o produto para clientes com contratos em outras plataformas",
+              "Participei da evolução da plataforma de um monólito para uma arquitetura de mais de 19 microsserviços",
+              "Coordenei a consultoria externa contratada para o projeto: integração ao time, versão mobile e revisão de qualidade das entregas",
+            ],
+          },
+          {
+            id: "radar",
+            name: "Radar Diário",
+            featured: true,
+            badge: "Pedido do CEO",
+            body: "Alertas proativos com IA: o usuário descreve a regra em linguagem natural e a equipe é avisada quando algo no ERP precisa de atenção, como contas prestes a vencer sem ninguém olhando.",
+            points: [
+              "Arquitetei e construí a funcionalidade de ponta a ponta, do cadastro do alerta à notificação em tempo real",
+              "Criei 3 microsserviços reutilizáveis: um scheduler com Quartz e um par producer/consumer sobre OCI Queue",
+              "Implementei o disparo por agenda ou a cada carga de dados do ERP, com a IA avaliando as regras e decidindo se o alerta deve ser gerado",
+              "Desenhei o processamento por fila conforme a capacidade disponível, para atender o volume de mais de 120 empresas sem sobrecarregar a plataforma com modelos ainda lentos",
+              "Implementei as notificações via WebSocket para quem está online, com entrega das pendentes no login",
+            ],
+          },
         ],
+        stack: ["OpenAI", "Gemini", "Claude", "Groq", "LiteLLM", "Java", "Spring Boot", "Next.js", "Quartz", "OCI Queue", "WebSocket"],
       },
       {
         id: "habil",
@@ -183,7 +252,7 @@ const ptBR: Dictionary = {
             ],
           },
         ],
-        stack: ["Java", "SQL", "Angular", "Node.js", "TypeScript", "WebSocket"],
+        stack: ["Java", "Spring Boot", "SQL", "Angular", "Node.js", "TypeScript", "WebSocket"],
       },
     ],
   },
@@ -279,18 +348,52 @@ const en: Dictionary = {
     lead: "ERP, legacy, microservices, AI and now my own company. Every step left me a piece of what I know today.",
     current: "Current",
     featuredLabel: "Highlight",
+    viaL2mu: "Delivered by L²MU, hired by Flow for this project.",
     more: "Meet L²MU",
     items: [
       {
         id: "flow",
         company: "Flow",
-        role: "Senior Full Stack Developer",
+        role: "Senior Software Engineer",
         period: "Feb 2026 — Nov 2026",
-        summary: "Data analysis and processing platform.",
-        highlights: [
-          "Evolved the Flow app with a focus on data, performance and security",
-          "CI/CD and a standardized development workflow for the team",
+        context:
+          "A sales analytics and management platform used by 1,000+ companies, fed by each client's ERP data. I joined as the most experienced developer on a lean team.",
+        summary:
+          "I strengthened the foundation of a data-only system: isolation between clients, database connections, the multitenant structure and the team's delivery flow.",
+        products: [
+          {
+            id: "flow-data",
+            name: "Security and data foundation",
+            featured: true,
+            badge: "1,000+ companies",
+            points: [
+              "Found and fixed, in my first week, a critical client isolation flaw in authentication, restructuring access control with JWT",
+              "Implemented connection pooling per client database, with a JWT-based guard and checks against connections leaking between users. Before, every request opened a connection from scratch",
+              "Started reorganizing the multitenant structure, moving data from the admin schema into each client's own schema",
+            ],
+          },
+          {
+            id: "flow-permissions",
+            name: "Per-company permissions",
+            viaL2mu: true,
+            body: "Requested by key clients: users with access to several companies needed different permissions in each one.",
+            points: [
+              "We refactored permissions into each company's schema, with view scopes for manager, supervisor and sales rep",
+              "We migrated gradually, with a per-company flag that restores the legacy model if anything goes wrong",
+            ],
+          },
+          {
+            id: "flow-team",
+            name: "Delivery flow",
+            points: [
+              "Created the team's admin panel to manage clients, users, access groups, reports and modules. Before, everything was done straight in the database and required a developer",
+              "Created an automated database migrator to speed up deliveries",
+              "Simplified the Git flow: merging to main deploys to staging and a versioned tag deploys to production, with deploys in seconds and easy rollback",
+              "Created a script that spins up the project with Docker on the QA machine, so every PR is tested before approval",
+            ],
+          },
         ],
+        stack: ["Python", "React", "Vite", "JWT", "Docker"],
       },
       {
         id: "l2mu",
@@ -307,14 +410,40 @@ const en: Dictionary = {
       {
         id: "viasoft",
         company: "VIASOFT",
-        role: "Mid-level Full Stack Developer",
+        role: "Software Engineer · R&D",
         period: "Dec 2024 — Oct 2025",
-        summary: "AI applied to business management inside an ERP ecosystem.",
-        highlights: [
-          "Built VIAHELPER, an AI platform for business management",
-          "Architecture and implementation of Radar Diário, a proactive alerting system",
-          "Integrations between ERPs and internal services on a microservices architecture",
+        context:
+          "A group of industry-specialized ERPs, on the market since 1990, with around 700 employees. I worked in R&D, the innovation and product modernization team.",
+        summary:
+          "I helped take VIAHELPER from MVP to a product used by 120+ companies, one of them with 3,000+ stores, and architected its most strategic feature.",
+        products: [
+          {
+            id: "viahelper",
+            name: "VIAHELPER",
+            body: "An AI platform for businesses: assistants per department, fed by the client's ERP data through an API.",
+            points: [
+              "Took part in shaping the MVP and the product's visual identity alongside the design team",
+              "Integrated multiple AI providers (OpenAI, Gemini, Claude, Groq and LiteLLM), opening the product to clients already contracted with other platforms",
+              "Took part in evolving the platform from a monolith into an architecture of 19+ microservices",
+              "Coordinated the external consultancy hired for the project: onboarding, the mobile version and quality review of their deliveries",
+            ],
+          },
+          {
+            id: "radar",
+            name: "Radar Diário",
+            featured: true,
+            badge: "Requested by the CEO",
+            body: "Proactive AI alerts: users describe a rule in plain language and the team is notified when something in the ERP needs attention, such as bills about to fall due with nobody looking.",
+            points: [
+              "Architected and built the feature end to end, from alert setup to real-time notification",
+              "Created 3 reusable microservices: a Quartz scheduler and an OCI Queue producer/consumer pair",
+              "Implemented scheduled and per-ERP-load triggers, with the AI evaluating the rules and deciding whether to raise the alert",
+              "Designed queue-based processing paced to available capacity, handling 120+ companies without overloading the platform with still-slow models",
+              "Implemented WebSocket notifications for users online, with pending ones delivered at login",
+            ],
+          },
         ],
+        stack: ["OpenAI", "Gemini", "Claude", "Groq", "LiteLLM", "Java", "Spring Boot", "Next.js", "Quartz", "OCI Queue", "WebSocket"],
       },
       {
         id: "habil",
@@ -347,7 +476,7 @@ const en: Dictionary = {
             ],
           },
         ],
-        stack: ["Java", "SQL", "Angular", "Node.js", "TypeScript", "WebSocket"],
+        stack: ["Java", "Spring Boot", "SQL", "Angular", "Node.js", "TypeScript", "WebSocket"],
       },
     ],
   },
