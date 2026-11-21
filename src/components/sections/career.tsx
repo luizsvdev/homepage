@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { Reveal, SectionHeading } from "@/components/reveal";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -209,8 +209,18 @@ function FeaturedCard({ job, t }: { job: Job; t: Dictionary }) {
       <div className="relative">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <h3>
-            <a href={url} target="_blank" rel="noopener" aria-label={`${job.company} (${host(url)})`}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener"
+              aria-label={`${job.company} (${host(url)})`}
+              className="group inline-flex items-center gap-2"
+            >
               <img src="/brand/l2mu-wordmark.svg" alt={job.company} width={290} height={120} className="h-12 w-auto sm:h-14" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-5 text-white/60 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-l2mu-primary"
+              />
             </a>
           </h3>
           <span className="inline-flex items-center gap-2 rounded-full border border-l2mu-primary/40 px-3 py-1 text-xs font-semibold text-l2mu-primary">
@@ -252,24 +262,6 @@ function FeaturedCard({ job, t }: { job: Job; t: Dictionary }) {
             {product.points.length > 0 && <Highlights items={product.points} featured />}
           </section>
         ))}
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href={`#${t.ids.company}`}
-            className="inline-flex items-center gap-2 rounded-full bg-l2mu-primary px-5 py-2.5 text-sm font-semibold text-l2mu-bg transition-transform hover:-translate-y-0.5"
-          >
-            {t.career.more}
-            <ArrowDown aria-hidden="true" className="size-4" />
-          </a>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 font-mono text-sm text-white/80 transition-colors hover:border-l2mu-primary hover:text-l2mu-primary"
-          >
-            {host(url)}
-            <ArrowUpRight aria-hidden="true" className="size-4" />
-          </a>
-        </div>
       </div>
       <BorderBeam size={180} duration={8} colorFrom="#c8ff00" colorTo="#c8ff0000" borderWidth={1.5} />
     </article>

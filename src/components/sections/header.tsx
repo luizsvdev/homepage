@@ -5,8 +5,8 @@ export function Header({ t, locale }: { t: Dictionary; locale: Locale }) {
   const other: Locale = locale === "pt-BR" ? "en" : "pt-BR";
   const links = [
     { href: `#${t.ids.approach}`, label: t.nav.approach },
-    { href: `#${t.ids.career}`, label: t.nav.career },
     { href: `#${t.ids.company}`, label: t.nav.company },
+    { href: `#${t.ids.career}`, label: t.nav.career },
     { href: `#${t.ids.contact}`, label: t.nav.contact },
   ];
 

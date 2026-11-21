@@ -41,7 +41,7 @@ export type Dictionary = {
     facts: { value: string; label: string }[];
   };
   approach: { kicker: string; title: string; items: { title: string; body: string }[] };
-  career: { kicker: string; title: string; lead: string; current: string; more: string; featuredLabel: string; viaL2mu: string; items: Experience[] };
+  career: { kicker: string; title: string; lead: string; current: string; featuredLabel: string; viaL2mu: string; items: Experience[] };
   company: {
     kicker: string;
     title: string;
@@ -125,8 +125,30 @@ const ptBR: Dictionary = {
     current: "Atual",
     featuredLabel: "Destaque",
     viaL2mu: "Entregue pela L²MU, contratada pela Flow para este projeto.",
-    more: "Conheça a L²MU",
     items: [
+      {
+        id: "l2mu",
+        company: "L²MU",
+        role: "Cofundador · Engenheiro de Software",
+        period: "abr 2025 — hoje",
+        summary:
+          "Software house de quatro engenheiros: construímos sistemas sob medida para clientes e operamos nossos próprios produtos para nichos específicos.",
+        highlights: [
+          "Desenho a arquitetura da maioria dos projetos e acompanho a construção até a entrega em produção",
+          "Participo da descoberta com os clientes para transformar a dor do negócio em escopo, prazo e custo",
+          "Entregamos projetos sob medida para clientes, da evolução de sistemas existentes a novos produtos web",
+        ],
+        products: [
+          {
+            id: "juriscontroller",
+            name: "JurisController",
+            featured: true,
+            badge: "Produto próprio",
+            body: "Sistema web de gestão para pequenos escritórios de advocacia, que reúne prazos, intimações do DJEN, processos e financeiro em um só lugar. Criado, mantido e operado por nós.",
+            points: [],
+          },
+        ],
+      },
       {
         id: "flow",
         company: "Flow",
@@ -170,29 +192,6 @@ const ptBR: Dictionary = {
           },
         ],
         stack: ["Python", "React", "Vite", "JWT", "Docker"],
-      },
-      {
-        id: "l2mu",
-        company: "L²MU",
-        role: "Cofundador · Engenheiro de Software",
-        period: "abr 2025 — hoje",
-        summary:
-          "Software house de quatro engenheiros: construímos sistemas sob medida para clientes e operamos nossos próprios produtos para nichos específicos.",
-        highlights: [
-          "Desenho a arquitetura da maioria dos projetos e acompanho a construção até a entrega em produção",
-          "Participo da descoberta com os clientes para transformar a dor do negócio em escopo, prazo e custo",
-          "Entregamos projetos sob medida para clientes, da evolução de sistemas existentes a novos produtos web",
-        ],
-        products: [
-          {
-            id: "juriscontroller",
-            name: "JurisController",
-            featured: true,
-            badge: "Produto próprio",
-            body: "Sistema web de gestão para pequenos escritórios de advocacia, que reúne prazos, intimações do DJEN, processos e financeiro em um só lugar. Criado, mantido e operado por nós.",
-            points: [],
-          },
-        ],
       },
       {
         id: "viasoft",
@@ -360,8 +359,30 @@ const en: Dictionary = {
     current: "Current",
     featuredLabel: "Highlight",
     viaL2mu: "Delivered by L²MU, hired by Flow for this project.",
-    more: "Meet L²MU",
     items: [
+      {
+        id: "l2mu",
+        company: "L²MU",
+        role: "Co-founder · Software Engineer",
+        period: "Apr 2025 — present",
+        summary:
+          "A software house of four engineers: we build custom systems for clients and run our own products for specific niches.",
+        highlights: [
+          "I design the architecture of most projects and stay with the build until it runs in production",
+          "I take part in discovery with clients to turn business pain into scope, timeline and cost",
+          "We deliver custom projects for clients, from evolving existing systems to building new web products",
+        ],
+        products: [
+          {
+            id: "juriscontroller",
+            name: "JurisController",
+            featured: true,
+            badge: "Our own product",
+            body: "A web-based management system for small law firms, bringing deadlines, DJEN court notices, cases and finance together in one place. Built, maintained and run by us.",
+            points: [],
+          },
+        ],
+      },
       {
         id: "flow",
         company: "Flow",
@@ -405,29 +426,6 @@ const en: Dictionary = {
           },
         ],
         stack: ["Python", "React", "Vite", "JWT", "Docker"],
-      },
-      {
-        id: "l2mu",
-        company: "L²MU",
-        role: "Co-founder · Software Engineer",
-        period: "Apr 2025 — present",
-        summary:
-          "A software house of four engineers: we build custom systems for clients and run our own products for specific niches.",
-        highlights: [
-          "I design the architecture of most projects and stay with the build until it runs in production",
-          "I take part in discovery with clients to turn business pain into scope, timeline and cost",
-          "We deliver custom projects for clients, from evolving existing systems to building new web products",
-        ],
-        products: [
-          {
-            id: "juriscontroller",
-            name: "JurisController",
-            featured: true,
-            badge: "Our own product",
-            body: "A web-based management system for small law firms, bringing deadlines, DJEN court notices, cases and finance together in one place. Built, maintained and run by us.",
-            points: [],
-          },
-        ],
       },
       {
         id: "viasoft",
