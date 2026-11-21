@@ -46,7 +46,7 @@ export function TimelineItem({
   children: ReactNode;
 }) {
   return (
-    <li className={cn("relative grid gap-3 pb-14 pl-8 last:pb-0 md:grid-cols-[11rem_1fr] md:gap-12 md:pl-0", className)}>
+    <li className={cn("relative grid gap-3 pb-14 pl-6 last:pb-0 md:grid-cols-[11rem_1fr] md:gap-12 md:pl-0", className)}>
       <span aria-hidden="true" className="absolute top-7 left-(--rail) z-10 -translate-x-1/2 -translate-y-1/2">
         {dot ?? <span className="block size-3 rounded-full border-2 border-foreground bg-surface" />}
       </span>

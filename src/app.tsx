@@ -18,9 +18,9 @@ export function App({ locale }: { locale: Locale }) {
       <Header t={t} locale={locale} />
       <main id={t.ids.main}>
         <Hero t={t} />
-        <Approach t={t} />
         <Company t={t} />
         <Career t={t} />
+        <Approach t={t} />
         <Stack t={t} />
         <Contact t={t} />
       </main>

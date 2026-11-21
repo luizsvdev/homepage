@@ -61,7 +61,7 @@ function FeaturedProduct({ product, label, accent }: { product: Product; label: 
     <section
       aria-label={product.name}
       style={{ "--accent-brand": accent } as React.CSSProperties}
-      className="relative overflow-hidden rounded-2xl border border-foreground/20 bg-surface bg-[linear-gradient(to_bottom,color-mix(in_oklab,var(--accent-brand)_7%,transparent),transparent_45%)] p-6 sm:p-7"
+      className="relative overflow-hidden rounded-2xl border border-foreground/20 bg-surface bg-[linear-gradient(to_bottom,color-mix(in_oklab,var(--accent-brand)_7%,transparent),transparent_45%)] p-4 sm:p-7"
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -122,7 +122,7 @@ function Product({ product, t }: { product: Product; t: Dictionary }) {
     <section
       aria-label={product.name}
       className={cn(
-        "relative rounded-2xl border bg-surface p-6 sm:p-7",
+        "relative rounded-2xl border bg-surface p-4 sm:p-7",
         product.viaL2mu
           ? "border-l2mu-primary/60 shadow-[0_0_28px_-10px_rgba(200,255,0,0.55)]"
           : "border-border",
@@ -150,7 +150,7 @@ function JobCard({ job, t }: { job: Job; t: Dictionary }) {
       gradientFrom="var(--muted)"
       gradientTo="var(--line)"
     >
-      <article className="p-6 sm:p-8">
+      <article className="p-4 sm:p-8">
         <div className={cn("flex flex-wrap justify-between gap-x-4 gap-y-1", icon ? "items-center" : "items-baseline")}>
           <h3 className="text-2xl font-medium tracking-tight">
             <a href={url} target="_blank" rel="noopener" className="group inline-flex items-center gap-3">
@@ -201,7 +201,7 @@ function JobCard({ job, t }: { job: Job; t: Dictionary }) {
 function FeaturedCard({ job, t }: { job: Job; t: Dictionary }) {
   const url = experienceLinks[job.id];
   return (
-    <article className="relative overflow-hidden rounded-3xl border border-l2mu-accent bg-l2mu-bg p-8 font-brand text-white [color-scheme:dark] sm:p-10">
+    <article className="relative overflow-hidden rounded-3xl border border-l2mu-accent bg-l2mu-bg p-5 font-brand text-white [color-scheme:dark] sm:p-10">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-l2mu-primary/15 blur-3xl"
@@ -232,7 +232,7 @@ function FeaturedCard({ job, t }: { job: Job; t: Dictionary }) {
           </span>
         </div>
         <p className="mt-6 text-xl font-semibold">{job.role}</p>
-        <p className="mt-2 text-lg text-pretty text-white/75">{job.summary}</p>
+        <p className="mt-2 text-base text-pretty text-white/75 sm:text-lg">{job.summary}</p>
         <div className="text-white/90">
           <Highlights items={job.highlights ?? []} featured />
         </div>
@@ -240,7 +240,7 @@ function FeaturedCard({ job, t }: { job: Job; t: Dictionary }) {
           <section
             key={product.id}
             aria-label={product.name}
-            className="mt-8 rounded-2xl border border-l2mu-primary/30 bg-white/[0.04] p-5 sm:p-6"
+            className="mt-8 rounded-2xl border border-l2mu-primary/30 bg-white/[0.04] p-4 sm:p-6"
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">

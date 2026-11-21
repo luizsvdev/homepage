@@ -40,7 +40,7 @@ export function Hero({ t }: { t: Dictionary }) {
           </div>
         </div>
 
-        <div className="mx-auto w-full max-w-sm md:max-w-none">
+        <div className="mx-auto w-full max-w-[18rem] sm:max-w-sm md:max-w-none">
           <figure className="relative overflow-hidden rounded-3xl border border-border bg-[#0d0d0d] shadow-2xl shadow-black/10">
             <picture>
               <source type="image/avif" srcSet="/img/luiz-480.avif 480w, /img/luiz-800.avif 800w, /img/luiz-1200.avif 1200w" sizes="(min-width: 768px) 420px, 90vw" />
@@ -61,6 +61,7 @@ export function Hero({ t }: { t: Dictionary }) {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+        <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted uppercase">{t.hero.factsLabel}</p>
         <ul className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
           {t.hero.facts.map((f, i) => (
             <li key={f.label} className="bg-background">

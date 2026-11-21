@@ -30,7 +30,7 @@ type Experience = {
 export type Dictionary = {
   meta: { title: string; description: string; ogAlt: string };
   ids: { main: string; approach: string; career: string; company: string; contact: string };
-  nav: { label: string; approach: string; career: string; company: string; contact: string; switchTo: string; skip: string };
+  nav: { label: string; approach: string; career: string; company: string; contact: string; switchTo: string; skip: string; open: string; close: string };
   hero: {
     eyebrow: string;
     title: [string, string];
@@ -38,6 +38,7 @@ export type Dictionary = {
     ctaPrimary: string;
     ctaSecondary: string;
     photoAlt: string;
+    factsLabel: string;
     facts: { value: string; label: string }[];
   };
   approach: { kicker: string; title: string; items: { title: string; body: string }[] };
@@ -81,19 +82,22 @@ const ptBR: Dictionary = {
     contact: "Contato",
     switchTo: "English",
     skip: "Ir para o conteúdo",
+    open: "Abrir menu",
+    close: "Fechar menu",
   },
   hero: {
     eyebrow: "Engenheiro de Software · Cofundador da L²MU",
-    title: ["Tecnologia é a ferramenta.", "O trabalho é resolver o problema certo."],
+    title: ["Do comercial à produção,", "sem perder o problema de vista."],
     lead:
-      "Construo software desde 2022, de ERPs e sistemas legados a microsserviços em empresas de grande porte. Hoje trabalho lado a lado com o comercial para entender a dor de quem paga a conta e entregar a solução que faz sentido para o negócio, não só para o código.",
+      "Trabalho junto ao comercial para entender a dor do cliente antes de escrever código. Desde 2022 entrego ERPs, SaaS e plataformas usadas por milhares de empresas, e hoje faço isso como cofundador da L²MU.",
     ctaPrimary: "Conversar no WhatsApp",
     ctaSecondary: "Ver trajetória",
     photoAlt: "Retrato de Luiz Silva",
+    factsLabel: "Sistemas que ajudei a construir",
     facts: [
-      { value: "2022", label: "construindo software em produção" },
-      { value: "ERP · SaaS · IA", label: "domínios em que já entreguei" },
-      { value: "2025", label: "cofundei a L²MU" },
+      { value: "+8.600", label: "estabelecimentos usam o Chef Hábil" },
+      { value: "+1.000", label: "empresas na Flow, onde reforcei segurança e dados" },
+      { value: "+120", label: "empresas usam o VIAHELPER, onde arquitetei o Radar Diário" },
     ],
   },
   approach: {
@@ -121,7 +125,7 @@ const ptBR: Dictionary = {
   career: {
     kicker: "Trajetória",
     title: "Desde 2022 construindo o que empresas usam todo dia.",
-    lead: "ERP, legado, microsserviços, IA e agora empresa própria. Cada etapa me deixou uma parte do que sei hoje.",
+    lead: "Do ERP de pequenas empresas a plataformas usadas por milhares delas, e agora com empresa própria.",
     current: "Atual",
     featuredLabel: "Destaque",
     viaL2mu: "Entregue pela L²MU, contratada pela Flow para este projeto.",
@@ -315,19 +319,22 @@ const en: Dictionary = {
     contact: "Contact",
     switchTo: "Português",
     skip: "Skip to content",
+    open: "Open menu",
+    close: "Close menu",
   },
   hero: {
     eyebrow: "Software Engineer · Co-founder of L²MU",
-    title: ["Technology is the tool.", "The job is solving the right problem."],
+    title: ["From sales call to production,", "without losing sight of the problem."],
     lead:
-      "I've been building software since 2022, from ERPs and legacy systems to microservices at large companies. Today I work side by side with sales to understand the pain of whoever pays the bill, and ship the solution that makes sense for the business, not just for the code.",
+      "I work alongside sales to understand the client's pain before writing any code. Since 2022 I've shipped ERPs, SaaS and platforms used by thousands of businesses, and today I do it as co-founder of L²MU.",
     ctaPrimary: "Message me on WhatsApp",
     ctaSecondary: "See my career",
     photoAlt: "Portrait of Luiz Silva",
+    factsLabel: "Systems I helped build",
     facts: [
-      { value: "2022", label: "shipping software to production" },
-      { value: "ERP · SaaS · AI", label: "domains I've delivered in" },
-      { value: "2025", label: "co-founded L²MU" },
+      { value: "8,600+", label: "venues run on Chef Hábil" },
+      { value: "1,000+", label: "companies on Flow, where I hardened security and data" },
+      { value: "120+", label: "companies use VIAHELPER, where I architected Radar Diário" },
     ],
   },
   approach: {
@@ -355,7 +362,7 @@ const en: Dictionary = {
   career: {
     kicker: "Career",
     title: "Since 2022, building what companies use every day.",
-    lead: "ERP, legacy, microservices, AI and now my own company. Every step left me a piece of what I know today.",
+    lead: "From ERPs for small businesses to platforms used by thousands of them, and now my own company.",
     current: "Current",
     featuredLabel: "Highlight",
     viaL2mu: "Delivered by L²MU, hired by Flow for this project.",

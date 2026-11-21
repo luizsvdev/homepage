@@ -1,14 +1,32 @@
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+
 import { translateHash, type Dictionary } from "@/content/i18n";
 import { localePath, type Locale } from "@/content/site";
 
 export function Header({ t, locale }: { t: Dictionary; locale: Locale }) {
   const other: Locale = locale === "pt-BR" ? "en" : "pt-BR";
+  const [open, setOpen] = useState(false);
   const links = [
-    { href: `#${t.ids.approach}`, label: t.nav.approach },
     { href: `#${t.ids.company}`, label: t.nav.company },
     { href: `#${t.ids.career}`, label: t.nav.career },
+    { href: `#${t.ids.approach}`, label: t.nav.approach },
     { href: `#${t.ids.contact}`, label: t.nav.contact },
   ];
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    // Close if the viewport grows past the breakpoint where the inline nav shows.
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onMq = () => mq.matches && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    mq.addEventListener("change", onMq);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onMq);
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-md">
@@ -49,7 +67,32 @@ export function Header({ t, locale }: { t: Dictionary; locale: Locale }) {
             <span aria-hidden="true">{other === "en" ? "EN" : "PT"}</span>
             <span className="sr-only">{t.nav.switchTo}</span>
           </a>
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+            className="-mr-2 ml-1 inline-flex size-10 items-center justify-center rounded-full text-muted transition-colors hover:text-foreground md:hidden"
+          >
+            {open ? <X aria-hidden="true" className="size-5" /> : <Menu aria-hidden="true" className="size-5" />}
+            <span className="sr-only">{open ? t.nav.close : t.nav.open}</span>
+          </button>
         </nav>
+      </div>
+      <div id="mobile-nav" hidden={!open} className="border-t border-border/70 md:hidden">
+        <ul className="mx-auto flex max-w-6xl flex-col px-4 py-2 sm:px-6">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-base text-muted transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );
