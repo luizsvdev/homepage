@@ -72,7 +72,7 @@ const ptBR: Dictionary = {
   meta: {
     title: "Luiz Silva · Engenheiro de Software e cofundador da L²MU",
     description:
-      "Engenheiro de software desde 2022, com entregas em ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Cofundador da L²MU.",
+      "Engenheiro de software, construindo sistemas desde 2022, com entregas em ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Cofundador da L²MU.",
     ogAlt: "Luiz Silva, engenheiro de software e cofundador da L²MU",
   },
   ids: { main: "conteudo", approach: "como-trabalho", career: "trajetoria", company: "l2mu", contact: "contato" },
@@ -92,7 +92,7 @@ const ptBR: Dictionary = {
     cofounder: "Cofundador da",
     title: ["Do problema de negócio", "ao sistema em produção."],
     lead:
-      "Engenheiro de software desde 2022, com entregas em ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Hoje, como cofundador da L²MU, conduzo projetos da descoberta com o cliente à operação em produção.",
+      "Construo software desde 2022, com entregas em ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Hoje, como cofundador da L²MU, conduzo projetos da descoberta com o cliente à operação em produção.",
     ctaPrimary: "Ver trajetória",
     ctaSecondary: "Entrar em contato",
     photoAlt: "Retrato de Luiz Silva",
@@ -314,7 +314,7 @@ const en: Dictionary = {
   meta: {
     title: "Luiz Silva · Software Engineer and co-founder of L²MU",
     description:
-      "Software engineer since 2022, delivering ERPs, data platforms and AI products used by thousands of companies. Co-founder of L²MU.",
+      "Software engineer building systems since 2022, delivering ERPs, data platforms and AI products used by thousands of companies. Co-founder of L²MU.",
     ogAlt: "Luiz Silva, software engineer and co-founder of L²MU",
   },
   ids: { main: "content", approach: "how-i-work", career: "career", company: "l2mu", contact: "contact" },
@@ -334,7 +334,7 @@ const en: Dictionary = {
     cofounder: "Co-founder of",
     title: ["From business problem", "to system in production."],
     lead:
-      "Software engineer since 2022, delivering ERPs, data platforms and AI products used by thousands of companies. Today, as co-founder of L²MU, I lead projects from discovery with the client to running in production.",
+      "I've been building software since 2022, delivering ERPs, data platforms and AI products used by thousands of companies. Today, as co-founder of L²MU, I lead projects from discovery with the client to running in production.",
     ctaPrimary: "See my career",
     ctaSecondary: "Get in touch",
     photoAlt: "Portrait of Luiz Silva",
