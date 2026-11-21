@@ -2,6 +2,7 @@ import { ArrowDown } from "lucide-react";
 
 import { Reveal } from "@/components/reveal";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { L2muWordmark } from "@/components/l2mu-wordmark";
 import type { Dictionary } from "@/content/i18n";
 
 export function Hero({ t }: { t: Dictionary }) {
@@ -13,7 +14,15 @@ export function Hero({ t }: { t: Dictionary }) {
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-20 sm:px-6 md:grid-cols-[1.25fr_1fr] md:pt-24 md:pb-28">
         <div>
-          <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">{t.hero.eyebrow}</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">
+            {t.hero.eyebrow} · {t.hero.cofounder}{" "}
+            <a
+              href={`#${t.ids.company}`}
+              className="inline-block text-foreground transition-transform hover:-translate-y-px focus-visible:-translate-y-px"
+            >
+              <L2muWordmark />
+            </a>
+          </p>
           <h1 id="hero-title" className="mt-6 font-serif text-5xl leading-[1.02] text-balance sm:text-6xl lg:text-7xl">
               {t.hero.title[0]}{" "}
               <em className="text-muted">{t.hero.title[1]}</em>
@@ -60,10 +69,10 @@ export function Hero({ t }: { t: Dictionary }) {
         <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted uppercase">{t.hero.factsLabel}</p>
         <ul className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
           {t.hero.facts.map((f, i) => (
-            <li key={f.label} className="bg-background">
+            <li key={f.title} className="bg-background">
               <Reveal delay={0.1 * i} className="p-6">
-                <p className="font-serif text-3xl">{f.value}</p>
-                <p className="mt-1 text-sm text-muted">{f.label}</p>
+                <p className="font-serif text-2xl">{f.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-pretty text-muted">{f.body}</p>
               </Reveal>
             </li>
           ))}

@@ -32,14 +32,16 @@ export type Dictionary = {
   ids: { main: string; approach: string; career: string; company: string; contact: string };
   nav: { label: string; approach: string; career: string; company: string; contact: string; switchTo: string; skip: string; open: string; close: string };
   hero: {
+    /** Rendered as "{eyebrow} · {cofounder} <L²MU wordmark>". */
     eyebrow: string;
+    cofounder: string;
     title: [string, string];
     lead: string;
     ctaPrimary: string;
     ctaSecondary: string;
     photoAlt: string;
     factsLabel: string;
-    facts: { value: string; label: string }[];
+    facts: { title: string; body: string }[];
   };
   approach: { kicker: string; title: string; items: { title: string; body: string }[] };
   career: { kicker: string; title: string; lead: string; current: string; featuredLabel: string; viaL2mu: string; items: Experience[] };
@@ -70,7 +72,7 @@ const ptBR: Dictionary = {
   meta: {
     title: "Luiz Silva · Engenheiro de Software e cofundador da L²MU",
     description:
-      "Engenheiro de software desde 2022, com passagem por ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Cofundador da L²MU.",
+      "Engenheiro de software desde 2022, com entregas em ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Cofundador da L²MU.",
     ogAlt: "Luiz Silva, engenheiro de software e cofundador da L²MU",
   },
   ids: { main: "conteudo", approach: "como-trabalho", career: "trajetoria", company: "l2mu", contact: "contato" },
@@ -86,39 +88,43 @@ const ptBR: Dictionary = {
     close: "Fechar menu",
   },
   hero: {
-    eyebrow: "Luiz Silva · Cofundador da L²MU",
-    title: ["Oi, eu sou o Luiz.", "Engenheiro de software."],
+    eyebrow: "Engenheiro de Software",
+    cofounder: "Cofundador da",
+    title: ["Do problema de negócio", "ao sistema em produção."],
     lead:
-      "Programo profissionalmente desde 2022 e sou um dos quatro sócios da L²MU. Já trabalhei com ERPs, plataformas de dados e produtos de IA, e gosto de participar do processo inteiro: da conversa com o cliente ao escopo, da entrega ao que acontece depois em produção.",
+      "Engenheiro de software desde 2022, com entregas em ERPs, plataformas de dados e produtos de IA usados por milhares de empresas. Hoje, como cofundador da L²MU, conduzo projetos da descoberta com o cliente à operação em produção.",
     ctaPrimary: "Ver trajetória",
-    ctaSecondary: "Falar comigo",
+    ctaSecondary: "Entrar em contato",
     photoAlt: "Retrato de Luiz Silva",
-    factsLabel: "Sistemas que ajudei a construir",
+    factsLabel: "O que entrego",
     facts: [
-      { value: "+8.600", label: "estabelecimentos usam o Chef Hábil" },
-      { value: "+1.000", label: "empresas na Flow, onde reforcei segurança e dados" },
-      { value: "+120", label: "empresas usam o VIAHELPER, onde arquitetei o Radar Diário" },
+      { title: "Produtos do zero", body: "Do MVP à produção: Chef Hábil, VIAHELPER e Juris Controller." },
+      { title: "Sistemas críticos", body: "Segurança, dados e integrações em plataformas com milhares de empresas." },
+      {
+        title: "Negócio e engenharia",
+        body: "Do levantamento com o cliente à coordenação de fornecedores, com prazo e custo na mesa.",
+      },
     ],
   },
   approach: {
     kicker: "Como trabalho",
-    title: "O que aprendi além do código.",
+    title: "O mesmo critério em cada projeto.",
     items: [
       {
         title: "Entender antes de construir",
-        body: "Na L²MU participo da descoberta com os clientes e ajudo a transformar o problema em escopo, prazo e custo. A maior economia de um projeto é não construir a coisa errada.",
+        body: "Participo da descoberta com o cliente e transformo o problema em escopo, prazo e custo. Evitar construir a coisa errada é a maior economia de um projeto.",
       },
       {
         title: "Arquitetura do tamanho do problema",
-        body: "Participei da migração de um monólito para mais de 19 microsserviços e sei o custo que isso tem. Por isso também sei quando um monólito bem feito resolve melhor.",
+        body: "Microsserviços quando a escala exige, como na evolução do VIAHELPER para mais de 19 serviços. Um monólito bem estruturado quando ele resolve melhor e mais barato.",
       },
       {
-        title: "O time entrega, não só eu",
-        body: "Na Flow criei o painel que tirou o time de dentro do banco, simplifiquei o deploy e coloquei o QA para testar cada PR. Processo bom faz todo mundo andar mais rápido.",
+        title: "Processo que acelera o time",
+        body: "Deploy em segundos, ambiente de QA para cada PR e ferramentas internas que tiram a operação de dentro do banco. Entrega rápida depende de processo, não de esforço heroico.",
       },
       {
-        title: "Software vive mais em produção",
-        body: "Trabalhar em um ERP com mais de 30 anos me ensinou que sistema é mais mantido do que escrito. O kanban do Chef Hábil segue em produção desde a entrega, sem mudanças estruturais.",
+        title: "Feito para durar em produção",
+        body: "Sistemas são mais mantidos do que escritos. Desenho cada um pensando em quem vai operá-lo e evoluí-lo depois, com migrações graduais e rollback simples.",
       },
     ],
   },
@@ -145,7 +151,7 @@ const ptBR: Dictionary = {
         products: [
           {
             id: "juriscontroller",
-            name: "JurisController",
+            name: "Juris Controller",
             featured: true,
             badge: "Produto próprio",
             body: "Sistema web de gestão para pequenos escritórios de advocacia, que reúne prazos, intimações do DJEN, processos e financeiro em um só lugar. Criado, mantido e operado por nós.",
@@ -156,7 +162,7 @@ const ptBR: Dictionary = {
       {
         id: "flow",
         company: "Flow",
-        role: "Engenheiro de Software Sênior",
+        role: "Engenheiro de Software",
         period: "fev 2026 — nov 2026",
         context:
           "Plataforma de análise e gestão comercial usada por mais de 1.000 empresas, alimentada pelos dados do ERP de cada cliente. Entrei como o desenvolvedor mais experiente de um time enxuto.",
@@ -238,7 +244,7 @@ const ptBR: Dictionary = {
       {
         id: "habil",
         company: "Hábil",
-        role: "Desenvolvedor Full Stack Pleno",
+        role: "Desenvolvedor Full Stack",
         period: "fev 2022 — nov 2024",
         context: "ERP com mais de 30 anos de mercado para micro e pequenas empresas, hoje parte do Grupo Limber.",
         summary:
@@ -271,20 +277,20 @@ const ptBR: Dictionary = {
     ],
   },
   company: {
-    kicker: "Minha empresa",
+    kicker: "A empresa",
     title: "L²MU",
     body: [
-      "A L²MU começou com uma ideia minha e virou empresa porque três engenheiros que eu admiro toparam construir junto. Hoje somos quatro sócios, todos com a mão no código.",
-      "Ser sócio me colocou do outro lado da mesa: além de construir, preciso entender quanto custa, quanto tempo leva e se vale a pena para quem está pagando.",
+      "A L²MU começou com uma ideia minha e virou empresa porque três profissionais que eu admiro toparam construir junto. Hoje somos quatro sócios: três na engenharia e um à frente da gestão e do comercial.",
+      "Construímos sistemas sob medida e mantemos produtos próprios, como o Juris Controller. Como sócio, respondo pela arquitetura dos projetos e participo da descoberta com cada cliente, onde escopo, prazo e custo são definidos.",
     ],
     role: "Cofundador",
     since: "desde abril de 2025",
     pillars: [
-      { title: "Arquitetura", body: "Desenho a arquitetura da maioria dos projetos e acompanho até a produção." },
-      { title: "Descoberta", body: "Converso com os clientes para entender o problema antes de definir a solução." },
-      { title: "Produto próprio", body: "Além de projetos sob medida, mantemos produtos nossos, como o JurisController." },
+      { title: "Sob medida", body: "Sistemas web, mobile e APIs para a operação do cliente." },
+      { title: "Produtos próprios", body: "Software que construímos e operamos para nichos específicos." },
+      { title: "Direto com os sócios", body: "Você conversa com quem conduz e entrega o projeto, sem intermediários." },
     ],
-    cta: "Site da L²MU",
+    cta: "Conhecer a L²MU",
   },
   stack: {
     kicker: "Ferramentas que uso",
@@ -292,8 +298,8 @@ const ptBR: Dictionary = {
   },
   contact: {
     kicker: "Contato",
-    title: "Vamos conversar.",
-    lead: "Seja sobre uma vaga, um projeto ou só para trocar uma ideia, pode me chamar.",
+    title: "Uma vaga, um projeto ou um problema para resolver?",
+    lead: "Respondo pessoalmente. Para oportunidades, envie o contexto da vaga. Para projetos, conte o problema e eu indico o melhor caminho, inclusive se faz sentido conduzirmos pela L²MU.",
     whatsapp: "WhatsApp",
     whatsappMessage: "Olá, Luiz! Vim pelo seu portfólio.",
     email: "E-mail",
@@ -307,7 +313,7 @@ const en: Dictionary = {
   meta: {
     title: "Luiz Silva · Software Engineer and co-founder of L²MU",
     description:
-      "Software engineer since 2022, with experience in ERPs, data platforms and AI products used by thousands of companies. Co-founder of L²MU.",
+      "Software engineer since 2022, delivering ERPs, data platforms and AI products used by thousands of companies. Co-founder of L²MU.",
     ogAlt: "Luiz Silva, software engineer and co-founder of L²MU",
   },
   ids: { main: "content", approach: "how-i-work", career: "career", company: "l2mu", contact: "contact" },
@@ -323,39 +329,43 @@ const en: Dictionary = {
     close: "Close menu",
   },
   hero: {
-    eyebrow: "Luiz Silva · Co-founder of L²MU",
-    title: ["Hi, I'm Luiz.", "Software engineer."],
+    eyebrow: "Software Engineer",
+    cofounder: "Co-founder of",
+    title: ["From business problem", "to system in production."],
     lead:
-      "I've been coding professionally since 2022 and I'm one of the four partners at L²MU. I've worked on ERPs, data platforms and AI products, and I like being part of the whole process: from talking to the client and shaping the scope to shipping and what happens next in production.",
+      "Software engineer since 2022, delivering ERPs, data platforms and AI products used by thousands of companies. Today, as co-founder of L²MU, I lead projects from discovery with the client to running in production.",
     ctaPrimary: "See my career",
     ctaSecondary: "Get in touch",
     photoAlt: "Portrait of Luiz Silva",
-    factsLabel: "Systems I helped build",
+    factsLabel: "What I deliver",
     facts: [
-      { value: "8,600+", label: "venues run on Chef Hábil" },
-      { value: "1,000+", label: "companies on Flow, where I hardened security and data" },
-      { value: "120+", label: "companies use VIAHELPER, where I architected Radar Diário" },
+      { title: "Built from scratch", body: "From MVP to production: Chef Hábil, VIAHELPER and Juris Controller." },
+      { title: "Critical systems", body: "Security, data and integrations on platforms serving thousands of companies." },
+      {
+        title: "Business and engineering",
+        body: "From client discovery to managing vendors, with timeline and cost on the table.",
+      },
     ],
   },
   approach: {
     kicker: "How I work",
-    title: "What I learned beyond the code.",
+    title: "The same standard on every project.",
     items: [
       {
         title: "Understand before building",
-        body: "At L²MU I take part in discovery with clients and help turn the problem into scope, timeline and cost. The biggest saving in any project is not building the wrong thing.",
+        body: "I take part in discovery with the client and turn the problem into scope, timeline and cost. Not building the wrong thing is the biggest saving in any project.",
       },
       {
         title: "Architecture sized to the problem",
-        body: "I took part in moving a monolith to 19+ microservices and know what that costs. That's also how I know when a well-built monolith is the better answer.",
+        body: "Microservices when scale demands it, as in VIAHELPER's evolution to 19+ services. A well-structured monolith when it solves the problem better and cheaper.",
       },
       {
-        title: "The team ships, not just me",
-        body: "At Flow I built the panel that got the team out of the database, simplified deploys and had QA test every PR. Good process makes everyone faster.",
+        title: "Process that speeds up the team",
+        body: "Deploys in seconds, a QA environment for every PR and internal tools that take operations out of the database. Fast delivery comes from process, not heroics.",
       },
       {
-        title: "Software lives longer in production",
-        body: "Working on a 30-year-old ERP taught me systems are maintained far more than they're written. The Chef Hábil kanban has run in production since launch with no structural changes.",
+        title: "Built to last in production",
+        body: "Systems are maintained far more than they are written. I design for whoever will run and evolve them next, with gradual migrations and simple rollbacks.",
       },
     ],
   },
@@ -382,7 +392,7 @@ const en: Dictionary = {
         products: [
           {
             id: "juriscontroller",
-            name: "JurisController",
+            name: "Juris Controller",
             featured: true,
             badge: "Our own product",
             body: "A web-based management system for small law firms, bringing deadlines, DJEN court notices, cases and finance together in one place. Built, maintained and run by us.",
@@ -393,7 +403,7 @@ const en: Dictionary = {
       {
         id: "flow",
         company: "Flow",
-        role: "Senior Software Engineer",
+        role: "Software Engineer",
         period: "Feb 2026 — Nov 2026",
         context:
           "A sales analytics and management platform used by 1,000+ companies, fed by each client's ERP data. I joined as the most experienced developer on a lean team.",
@@ -475,7 +485,7 @@ const en: Dictionary = {
       {
         id: "habil",
         company: "Hábil",
-        role: "Mid-level Full Stack Developer",
+        role: "Full Stack Developer",
         period: "Feb 2022 — Nov 2024",
         context: "An ERP with 30+ years on the market for small businesses, now part of Grupo Limber.",
         summary:
@@ -508,20 +518,20 @@ const en: Dictionary = {
     ],
   },
   company: {
-    kicker: "My company",
+    kicker: "The company",
     title: "L²MU",
     body: [
-      "L²MU started as an idea of mine and became a company because three engineers I admire agreed to build it together. Today we're four partners, all hands-on with the code.",
-      "Being a partner put me on the other side of the table: besides building, I need to understand what it costs, how long it takes and whether it's worth it for whoever is paying.",
+      "L²MU started as an idea of mine and became a company because three professionals I admire agreed to build it together. Today we're four partners: three in engineering and one leading management and sales.",
+      "We build custom systems and run products of our own, like Juris Controller. As a partner, I own the architecture of our projects and take part in discovery with every client, where scope, timeline and cost are set.",
     ],
     role: "Co-founder",
     since: "since April 2025",
     pillars: [
-      { title: "Architecture", body: "I design the architecture of most projects and follow them into production." },
-      { title: "Discovery", body: "I talk to clients to understand the problem before settling on a solution." },
-      { title: "Own products", body: "Besides custom projects, we run products of our own, like JurisController." },
+      { title: "Custom", body: "Web, mobile and API systems for the client's operation." },
+      { title: "Own products", body: "Software we build and run for specific niches." },
+      { title: "Straight to the partners", body: "You talk to the people who run and deliver the project, with no middlemen." },
     ],
-    cta: "L²MU website",
+    cta: "Visit L²MU",
   },
   stack: {
     kicker: "Tools I use",
@@ -529,8 +539,8 @@ const en: Dictionary = {
   },
   contact: {
     kicker: "Contact",
-    title: "Let's talk.",
-    lead: "Whether it's about a role, a project or just swapping ideas, feel free to reach out.",
+    title: "A role, a project or a problem to solve?",
+    lead: "I reply personally. For opportunities, send the context of the role. For projects, describe the problem and I'll point to the best path, including whether L²MU should take it on.",
     whatsapp: "WhatsApp",
     whatsappMessage: "Hi Luiz! I found you through your portfolio.",
     email: "Email",
